@@ -18,11 +18,7 @@ export type NavLinkProps = {
     selected: NavIcon
     normal: NavIcon
   }
-<<<<<<< HEAD
-  mode?: 'expand' | 'collapse'
-=======
   mode?: string
->>>>>>> main
 }
 
 export default function NavLink({
@@ -49,24 +45,15 @@ export default function NavLink({
       href={href}
       className={classNames(
         isActive ? 'bg-primary-50 text-primary-600 font-semibold' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-700',
-<<<<<<< HEAD
-        'group flex items-center rounded-md px-2 py-2 text-sm font-normal',
-=======
         'group flex items-center h-9 rounded-md py-2 text-sm font-normal',
         mode === 'expand' ? 'px-3' : 'px-2.5',
->>>>>>> main
       )}
     >
       <NavIcon
         className={classNames(
-<<<<<<< HEAD
-          'mr-2 h-4 w-4 flex-shrink-0',
-          isActive ? 'text-primary-600' : 'text-gray-700',
-=======
           'h-4 w-4 flex-shrink-0',
           isActive ? 'text-primary-600' : 'text-gray-700',
           mode === 'expand' ? 'mr-2' : 'mr-0',
->>>>>>> main
         )}
         aria-hidden="true"
       />

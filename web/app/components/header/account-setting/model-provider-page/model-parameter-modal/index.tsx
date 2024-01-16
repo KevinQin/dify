@@ -19,10 +19,7 @@ import {
   useLanguage,
   useTextGenerationCurrentProviderAndModelAndModelList,
 } from '../hooks'
-<<<<<<< HEAD
-=======
 import { isNullOrUndefined } from '../utils'
->>>>>>> main
 import ParameterItem from './parameter-item'
 import type { ParameterValue } from './parameter-item'
 import {
@@ -175,13 +172,6 @@ const ModelParameterModal: FC<ModelParameterModalProps> = ({
   }
 
   const handleInitialParams = () => {
-<<<<<<< HEAD
-    if (parameterRules.length) {
-      const newCompletionParams = { ...completionParams }
-      Object.keys(newCompletionParams).forEach((key) => {
-        if (!parameterRules.find(item => item.name === key))
-          delete newCompletionParams[key]
-=======
     const newCompletionParams = { ...completionParams }
     if (parameterRules.length) {
       parameterRules.forEach((parameterRule) => {
@@ -191,7 +181,6 @@ const ModelParameterModal: FC<ModelParameterModalProps> = ({
           else
             delete newCompletionParams[parameterRule.name]
         }
->>>>>>> main
       })
 
       onCompletionParamsChange(newCompletionParams)

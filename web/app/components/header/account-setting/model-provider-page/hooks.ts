@@ -258,18 +258,6 @@ export const useModelProviders = () => {
   }
 }
 
-<<<<<<< HEAD
-export const useUpdateModelProvidersAndModelList = () => {
-  const { mutate } = useSWRConfig()
-  const updateModelList = useUpdateModelList()
-
-  const updateModelProvidersAndModelList = useCallback(() => {
-    mutate('/workspaces/current/model-providers')
-    updateModelList(1)
-  }, [mutate, updateModelList])
-
-  return updateModelProvidersAndModelList
-=======
 export const useUpdateModelProviders = () => {
   const { mutate } = useSWRConfig()
 
@@ -278,5 +266,4 @@ export const useUpdateModelProviders = () => {
   }, [mutate])
 
   return updateModelProviders
->>>>>>> main
 }

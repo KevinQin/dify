@@ -24,11 +24,7 @@ export const WorkspaceProvider = ({
 
   return (
     <WorkspacesContext.Provider value={{
-<<<<<<< HEAD
-      workspaces: data?.workspaces || []
-=======
       workspaces: data?.workspaces || [],
->>>>>>> main
     }}>
       {children}
     </WorkspacesContext.Provider>
