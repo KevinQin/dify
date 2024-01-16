@@ -1,17 +1,8 @@
 # -*- coding:utf-8 -*-
-<<<<<<< HEAD
-from flask_restful import fields, marshal_with
-from flask import current_app
-
-from controllers.service_api import api
-from controllers.service_api.wraps import AppApiResource
-
-=======
 from controllers.service_api import api
 from controllers.service_api.wraps import AppApiResource
 from flask import current_app
 from flask_restful import fields, marshal_with
->>>>>>> main
 from models.model import App
 
 

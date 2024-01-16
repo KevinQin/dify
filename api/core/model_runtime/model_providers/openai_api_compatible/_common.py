@@ -1,15 +1,4 @@
 from decimal import Decimal
-<<<<<<< HEAD
-import requests
-
-from core.model_runtime.entities.common_entities import I18nObject
-from core.model_runtime.entities.llm_entities import LLMMode
-from core.model_runtime.entities.model_entities import AIModelEntity, DefaultParameterName, \
-      FetchFrom, ModelPropertyKey, ModelType, ParameterRule, ParameterType, PriceConfig
-
-from core.model_runtime.errors.invoke import InvokeConnectionError, InvokeServerUnavailableError, \
-      InvokeRateLimitError, InvokeAuthorizationError, InvokeBadRequestError, InvokeError
-=======
 
 import requests
 from core.model_runtime.entities.common_entities import I18nObject
@@ -19,7 +8,6 @@ from core.model_runtime.entities.model_entities import (AIModelEntity, DefaultPa
                                                         PriceConfig)
 from core.model_runtime.errors.invoke import (InvokeAuthorizationError, InvokeBadRequestError, InvokeConnectionError,
                                               InvokeError, InvokeRateLimitError, InvokeServerUnavailableError)
->>>>>>> main
 
 
 class _CommonOAI_API_Compat:

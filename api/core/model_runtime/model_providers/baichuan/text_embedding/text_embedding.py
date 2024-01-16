@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-from typing import Optional
-
-from core.model_runtime.entities.model_entities import PriceType
-from core.model_runtime.entities.text_embedding_entities import TextEmbeddingResult, EmbeddingUsage
-from core.model_runtime.errors.validate import CredentialsValidateFailedError
-from core.model_runtime.model_providers.__base.text_embedding_model import TextEmbeddingModel
-from core.model_runtime.errors.invoke import InvokeError, InvokeConnectionError, InvokeServerUnavailableError, \
-    InvokeRateLimitError, InvokeAuthorizationError, InvokeBadRequestError
-from core.model_runtime.model_providers.baichuan.llm.baichuan_tokenizer import BaichuanTokenizer
-from core.model_runtime.model_providers.baichuan.llm.baichuan_turbo_errors import InvalidAPIKeyError, InsufficientAccountBalance, \
-    InvalidAuthenticationError, RateLimitReachedError, InternalServerError, BadRequestError
-
-from requests import post
-from json import dumps, loads
-
-import time
-=======
 import time
 from json import dumps, loads
 from typing import Optional, Tuple
@@ -35,7 +17,6 @@ from core.model_runtime.model_providers.baichuan.llm.baichuan_turbo_errors impor
                                                                                    RateLimitReachedError)
 from requests import post
 
->>>>>>> main
 
 class BaichuanTextEmbeddingModel(TextEmbeddingModel):
     """
@@ -60,8 +41,6 @@ class BaichuanTextEmbeddingModel(TextEmbeddingModel):
             raise ValueError('Invalid model name')
         if not api_key:
             raise CredentialsValidateFailedError('api_key is required')
-<<<<<<< HEAD
-=======
         
         # split into chunks of batch size 16
         chunks = []
@@ -106,7 +85,6 @@ class BaichuanTextEmbeddingModel(TextEmbeddingModel):
         :param user: unique user id
         :return: embeddings result
         """
->>>>>>> main
         url = self.api_base
         headers = {
             'Authorization': 'Bearer ' + api_key,
@@ -138,15 +116,9 @@ class BaichuanTextEmbeddingModel(TextEmbeddingModel):
                 raise InsufficientAccountBalance(msg)
             elif err == 'invalid_authentication':
                 raise InvalidAuthenticationError(msg)
-<<<<<<< HEAD
-            elif 'rate' in err:
-                raise RateLimitReachedError(msg)
-            elif 'internal' in err:
-=======
             elif err and 'rate' in err:
                 raise RateLimitReachedError(msg)
             elif err and 'internal' in err:
->>>>>>> main
                 raise InternalServerError(msg)
             elif err == 'api_key_empty':
                 raise InvalidAPIKeyError(msg)
@@ -160,24 +132,10 @@ class BaichuanTextEmbeddingModel(TextEmbeddingModel):
         except Exception as e:
             raise InternalServerError(f"Failed to convert response to json: {e} with text: {response.text}")
 
-<<<<<<< HEAD
-        usage = self._calc_response_usage(model=model, credentials=credentials, tokens=usage['total_tokens'])
-
-        result = TextEmbeddingResult(
-            model=model,
-            embeddings=[[
-                float(data) for data in x['embedding']
-            ] for x in embeddings],
-            usage=usage
-        )
-
-        return result
-=======
         return [
             data['embedding'] for data in embeddings
         ], usage['total_tokens']
 
->>>>>>> main
 
     def get_num_tokens(self, model: str, credentials: dict, texts: list[str]) -> int:
         """

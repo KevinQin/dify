@@ -1,13 +1,7 @@
 from decimal import Decimal
 
-<<<<<<< HEAD
-from pydantic import BaseModel
-
-from core.model_runtime.entities.model_entities import ModelUsage
-=======
 from core.model_runtime.entities.model_entities import ModelUsage
 from pydantic import BaseModel
->>>>>>> main
 
 
 class EmbeddingUsage(ModelUsage):

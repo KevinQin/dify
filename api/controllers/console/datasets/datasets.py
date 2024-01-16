@@ -1,37 +1,12 @@
 # -*- coding:utf-8 -*-
 import flask_restful
-<<<<<<< HEAD
-from flask import request, current_app
-from flask_login import current_user
-
-from controllers.console.apikey import api_key_list, api_key_fields
-from core.model_runtime.entities.model_entities import ModelType
-from core.provider_manager import ProviderManager
-from libs.login import login_required
-from flask_restful import Resource, reqparse, marshal, marshal_with
-from werkzeug.exceptions import NotFound, Forbidden
-import services
-from controllers.console import api
-=======
 import services
 from controllers.console import api
 from controllers.console.apikey import api_key_fields, api_key_list
->>>>>>> main
 from controllers.console.app.error import ProviderNotInitializeError
 from controllers.console.datasets.error import DatasetNameDuplicateError
 from controllers.console.setup import setup_required
 from controllers.console.wraps import account_initialization_required
-<<<<<<< HEAD
-from core.indexing_runner import IndexingRunner
-from core.errors.error import LLMBadRequestError, ProviderTokenNotInitError
-from fields.app_fields import related_app_list
-from fields.dataset_fields import dataset_detail_fields, dataset_query_detail_fields
-from fields.document_fields import document_status_fields
-from extensions.ext_database import db
-from models.dataset import DocumentSegment, Document
-from models.model import UploadFile, ApiToken
-from services.dataset_service import DatasetService, DocumentService
-=======
 from core.errors.error import LLMBadRequestError, ProviderTokenNotInitError
 from core.indexing_runner import IndexingRunner
 from core.model_runtime.entities.model_entities import ModelType
@@ -48,7 +23,6 @@ from models.dataset import Document, DocumentSegment
 from models.model import ApiToken, UploadFile
 from services.dataset_service import DatasetService, DocumentService
 from werkzeug.exceptions import Forbidden, NotFound
->>>>>>> main
 
 
 def _validate_name(name):

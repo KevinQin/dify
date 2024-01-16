@@ -2,10 +2,6 @@ from typing import Dict
 
 from core.model_runtime.entities.model_entities import DefaultParameterName
 
-<<<<<<< HEAD
-
-=======
->>>>>>> main
 PARAMETER_RULE_TEMPLATE: Dict[DefaultParameterName, dict] = {
     DefaultParameterName.TEMPERATURE: {
         'label': {

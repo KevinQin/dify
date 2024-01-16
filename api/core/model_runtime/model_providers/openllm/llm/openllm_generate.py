@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-from typing import Any, Dict, List, Union, Generator
-from requests import post, Response
-from requests.exceptions import ConnectionError, InvalidSchema, MissingSchema
-from json import dumps, loads
-from enum import Enum
-
-from core.model_runtime.model_providers.openllm.llm.openllm_generate_errors import BadRequestError, InvalidAPIKeyError, \
-    InternalServerError, RateLimitReachedError, InvalidAuthenticationError, InsufficientAccountBalanceError
-=======
 from enum import Enum
 from json import dumps, loads
 from typing import Any, Dict, Generator, List, Union
@@ -21,7 +11,6 @@ from core.model_runtime.model_providers.openllm.llm.openllm_generate_errors impo
 from requests import Response, post
 from requests.exceptions import ConnectionError, InvalidSchema, MissingSchema
 
->>>>>>> main
 
 class OpenLLMGenerateMessage:
     class Role(Enum):

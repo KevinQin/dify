@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-from flask import request
-from flask_restful import marshal_with
-
-from controllers.service_api import api
-from controllers.service_api.wraps import AppApiResource
-from controllers.service_api.app import create_or_update_end_user_for_user_id
-from controllers.service_api.app.error import NoFileUploadedError, TooManyFilesError, FileTooLargeError, \
-    UnsupportedFileTypeError
-import services
-from services.file_service import FileService
-from fields.file_fields import file_fields
-=======
 import services
 from controllers.service_api import api
 from controllers.service_api.app import create_or_update_end_user_for_user_id
@@ -21,7 +8,6 @@ from fields.file_fields import file_fields
 from flask import request
 from flask_restful import marshal_with
 from services.file_service import FileService
->>>>>>> main
 
 
 class FileApi(AppApiResource):

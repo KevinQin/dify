@@ -1,22 +1,8 @@
 # -*- coding:utf-8 -*-
-<<<<<<< HEAD
-from flask_login import current_user
-from flask_restful import fields, reqparse, marshal_with
-from flask_restful.inputs import int_range
-from werkzeug.exceptions import NotFound
-
-=======
->>>>>>> main
 from controllers.console import api
 from controllers.console.explore.error import NotChatAppError
 from controllers.console.explore.wraps import InstalledAppResource
 from fields.conversation_fields import conversation_infinite_scroll_pagination_fields, simple_conversation_fields
-<<<<<<< HEAD
-from libs.helper import TimestampField, uuid_value
-from services.conversation_service import ConversationService
-from services.errors.conversation import LastConversationNotExistsError, ConversationNotExistsError
-from services.web_conversation_service import WebConversationService
-=======
 from flask_login import current_user
 from flask_restful import fields, marshal_with, reqparse
 from flask_restful.inputs import int_range
@@ -25,7 +11,6 @@ from services.conversation_service import ConversationService
 from services.errors.conversation import ConversationNotExistsError, LastConversationNotExistsError
 from services.web_conversation_service import WebConversationService
 from werkzeug.exceptions import NotFound
->>>>>>> main
 
 
 class ConversationListApi(InstalledAppResource):

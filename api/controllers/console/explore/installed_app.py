@@ -1,22 +1,6 @@
 # -*- coding:utf-8 -*-
 from datetime import datetime
 
-<<<<<<< HEAD
-from flask_login import current_user
-from libs.login import login_required
-from flask_restful import Resource, reqparse, marshal_with, inputs
-from sqlalchemy import and_
-from werkzeug.exceptions import NotFound, Forbidden, BadRequest
-
-from controllers.console import api
-from controllers.console.explore.wraps import InstalledAppResource
-from controllers.console.wraps import account_initialization_required
-from extensions.ext_database import db
-from fields.installed_app_fields import installed_app_list_fields
-from models.model import App, InstalledApp, RecommendedApp
-from services.account_service import TenantService
-from controllers.console.wraps import cloud_edition_billing_resource_check
-=======
 from controllers.console import api
 from controllers.console.explore.wraps import InstalledAppResource
 from controllers.console.wraps import account_initialization_required, cloud_edition_billing_resource_check
@@ -29,7 +13,6 @@ from models.model import App, InstalledApp, RecommendedApp
 from services.account_service import TenantService
 from sqlalchemy import and_
 from werkzeug.exceptions import BadRequest, Forbidden, NotFound
->>>>>>> main
 
 
 class InstalledAppsListApi(Resource):

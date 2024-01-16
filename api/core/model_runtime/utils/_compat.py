@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-from typing import (
-    Any
-)
-=======
 from typing import Any
->>>>>>> main
 
 from pydantic import BaseModel
 from pydantic.version import VERSION as PYDANTIC_VERSION

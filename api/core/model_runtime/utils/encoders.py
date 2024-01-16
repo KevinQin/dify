@@ -3,18 +3,7 @@ import datetime
 from collections import defaultdict, deque
 from decimal import Decimal
 from enum import Enum
-<<<<<<< HEAD
-from ipaddress import (
-    IPv4Address,
-    IPv4Interface,
-    IPv4Network,
-    IPv6Address,
-    IPv6Interface,
-    IPv6Network,
-)
-=======
 from ipaddress import IPv4Address, IPv4Interface, IPv4Network, IPv6Address, IPv6Interface, IPv6Network
->>>>>>> main
 from pathlib import Path, PurePath
 from re import Pattern
 from types import GeneratorType

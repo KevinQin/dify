@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-from typing import Optional, List, Union, Generator
-
-from huggingface_hub import InferenceClient
-from huggingface_hub.hf_api import HfApi
-from huggingface_hub.utils import BadRequestError
-
-from core.model_runtime.entities.common_entities import I18nObject
-from core.model_runtime.entities.defaults import PARAMETER_RULE_TEMPLATE
-from core.model_runtime.entities.llm_entities import LLMResult, LLMResultChunk, LLMResultChunkDelta, LLMMode
-from core.model_runtime.entities.message_entities import PromptMessage, PromptMessageTool, AssistantPromptMessage, \
-    UserPromptMessage, SystemPromptMessage
-from core.model_runtime.entities.model_entities import ParameterRule, DefaultParameterName, AIModelEntity, ModelType, \
-    FetchFrom
-from core.model_runtime.errors.validate import CredentialsValidateFailedError
-from core.model_runtime.model_providers.__base.large_language_model import LargeLanguageModel
-from core.model_runtime.model_providers.huggingface_hub._common import _CommonHuggingfaceHub
-=======
 from typing import Generator, List, Optional, Union
 
 from core.model_runtime.entities.common_entities import I18nObject
@@ -31,7 +13,6 @@ from core.model_runtime.model_providers.huggingface_hub._common import _CommonHu
 from huggingface_hub import InferenceClient
 from huggingface_hub.hf_api import HfApi
 from huggingface_hub.utils import BadRequestError
->>>>>>> main
 
 
 class HuggingfaceHubLargeLanguageModel(_CommonHuggingfaceHub, LargeLanguageModel):
@@ -115,11 +96,7 @@ class HuggingfaceHubLargeLanguageModel(_CommonHuggingfaceHub, LargeLanguageModel
             fetch_from=FetchFrom.CUSTOMIZABLE_MODEL,
             model_type=ModelType.LLM,
             model_properties={
-<<<<<<< HEAD
-                'mode': LLMMode.COMPLETION.value
-=======
                 ModelPropertyKey.MODE: LLMMode.COMPLETION.value
->>>>>>> main
             },
             parameter_rules=self._get_customizable_model_parameter_rules()
         )
@@ -157,9 +134,6 @@ class HuggingfaceHubLargeLanguageModel(_CommonHuggingfaceHub, LargeLanguageModel
             precision=0,
         )
 
-<<<<<<< HEAD
-        return [temperature_rule, top_k_rule, top_p_rule]
-=======
         max_new_tokens = ParameterRule(
             name='max_new_tokens',
             label={
@@ -209,7 +183,6 @@ class HuggingfaceHubLargeLanguageModel(_CommonHuggingfaceHub, LargeLanguageModel
         )
 
         return [temperature_rule, top_k_rule, top_p_rule, max_new_tokens, seed, repetition_penalty]
->>>>>>> main
 
     def _handle_generate_stream_response(self,
                                          model: str,

@@ -1,30 +1,10 @@
 import json
 import logging
-<<<<<<< HEAD
-from typing import Union, Generator
-
-from flask import stream_with_context, Response
-from flask_restful import reqparse
-from werkzeug.exceptions import NotFound, InternalServerError
-=======
 from typing import Generator, Union
->>>>>>> main
 
 import services
 from controllers.service_api import api
 from controllers.service_api.app import create_or_update_end_user_for_user_id
-<<<<<<< HEAD
-from controllers.service_api.app.error import AppUnavailableError, ProviderNotInitializeError, NotChatAppError, \
-    ConversationCompletedError, CompletionRequestError, ProviderQuotaExceededError, \
-    ProviderModelCurrentlyNotSupportError
-from controllers.service_api.wraps import AppApiResource
-from core.application_queue_manager import ApplicationQueueManager
-from core.entities.application_entities import InvokeFrom
-from core.errors.error import ProviderTokenNotInitError, QuotaExceededError, ModelCurrentlyNotSupportError
-from core.model_runtime.errors.invoke import InvokeError
-from libs.helper import uuid_value
-from services.completion_service import CompletionService
-=======
 from controllers.service_api.app.error import (AppUnavailableError, CompletionRequestError, ConversationCompletedError,
                                                NotChatAppError, ProviderModelCurrentlyNotSupportError,
                                                ProviderNotInitializeError, ProviderQuotaExceededError)
@@ -38,7 +18,6 @@ from flask_restful import reqparse
 from libs.helper import uuid_value
 from services.completion_service import CompletionService
 from werkzeug.exceptions import InternalServerError, NotFound
->>>>>>> main
 
 
 class CompletionApi(AppApiResource):
@@ -96,13 +75,6 @@ class CompletionApi(AppApiResource):
 
 
 class CompletionStopApi(AppApiResource):
-<<<<<<< HEAD
-    def post(self, app_model, end_user, task_id):
-        if app_model.mode != 'completion':
-            raise AppUnavailableError()
-
-        ApplicationQueueManager.set_stop_flag(task_id, InvokeFrom.SERVICE_API, end_user.id)
-=======
     def post(self, app_model, _, task_id):
         if app_model.mode != 'completion':
             raise AppUnavailableError()
@@ -110,7 +82,6 @@ class CompletionStopApi(AppApiResource):
         end_user_id = request.get_json().get('user')
 
         ApplicationQueueManager.set_stop_flag(task_id, InvokeFrom.SERVICE_API, end_user_id)
->>>>>>> main
 
         return {'result': 'success'}, 200
 
@@ -170,13 +141,6 @@ class ChatApi(AppApiResource):
 
 
 class ChatStopApi(AppApiResource):
-<<<<<<< HEAD
-    def post(self, app_model, end_user, task_id):
-        if app_model.mode != 'chat':
-            raise NotChatAppError()
-
-        ApplicationQueueManager.set_stop_flag(task_id, InvokeFrom.SERVICE_API, end_user.id)
-=======
     def post(self, app_model, _, task_id):
         if app_model.mode != 'chat':
             raise NotChatAppError()
@@ -184,7 +148,6 @@ class ChatStopApi(AppApiResource):
         end_user_id = request.get_json().get('user')
 
         ApplicationQueueManager.set_stop_flag(task_id, InvokeFrom.SERVICE_API, end_user_id)
->>>>>>> main
 
         return {'result': 'success'}, 200
 

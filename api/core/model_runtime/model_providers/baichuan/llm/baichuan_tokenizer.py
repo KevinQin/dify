@@ -1,9 +1,5 @@
 import re
 
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 class BaichuanTokenizer(object):
     @classmethod
     def count_chinese_characters(cls, text: str) -> int:

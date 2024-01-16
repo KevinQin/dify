@@ -1,22 +1,8 @@
 # -*- coding:utf-8 -*-
-<<<<<<< HEAD
-from flask import current_app
-from flask_login import current_user
-from libs.login import login_required
-from flask_restful import Resource, reqparse, marshal_with, abort, fields, marshal
-
-=======
->>>>>>> main
 import services
 from controllers.console import api
 from controllers.console.setup import setup_required
 from controllers.console.wraps import account_initialization_required, cloud_edition_billing_resource_check
-<<<<<<< HEAD
-from libs.helper import TimestampField
-from extensions.ext_database import db
-from models.account import Account, TenantAccountJoin
-from services.account_service import TenantService, RegisterService
-=======
 from extensions.ext_database import db
 from flask import current_app
 from flask_login import current_user
@@ -25,7 +11,6 @@ from libs.helper import TimestampField
 from libs.login import login_required
 from models.account import Account, TenantAccountJoin
 from services.account_service import RegisterService, TenantService
->>>>>>> main
 
 account_fields = {
     'id': fields.String,

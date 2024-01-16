@@ -6,10 +6,7 @@
 - huggingface_hub
 - cohere
 - togetherai
-<<<<<<< HEAD
-=======
 - ollama
->>>>>>> main
 - zhipuai
 - baichuan
 - spark
@@ -21,8 +18,4 @@
 - xinference
 - openllm
 - localai
-<<<<<<< HEAD
 - openai_api_compatible
-=======
-- openai_api_compatible
->>>>>>> main

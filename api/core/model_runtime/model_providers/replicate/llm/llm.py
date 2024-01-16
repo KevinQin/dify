@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-from typing import Optional, List, Union, Generator
-
-from replicate import Client as ReplicateClient
-from replicate.exceptions import ReplicateError
-from replicate.prediction import Prediction
-
-from core.model_runtime.entities.common_entities import I18nObject
-from core.model_runtime.entities.llm_entities import LLMResult, LLMMode, LLMResultChunk, LLMResultChunkDelta
-from core.model_runtime.entities.message_entities import PromptMessage, PromptMessageTool, AssistantPromptMessage, \
-    PromptMessageRole, UserPromptMessage, SystemPromptMessage
-from core.model_runtime.entities.model_entities import ParameterRule, AIModelEntity, FetchFrom, ModelType, ModelPropertyKey
-from core.model_runtime.errors.validate import CredentialsValidateFailedError
-from core.model_runtime.model_providers.__base.large_language_model import LargeLanguageModel
-from core.model_runtime.model_providers.replicate._common import _CommonReplicate
-=======
 from typing import Generator, List, Optional, Union
 
 from core.model_runtime.entities.common_entities import I18nObject
@@ -28,7 +12,6 @@ from core.model_runtime.model_providers.replicate._common import _CommonReplicat
 from replicate import Client as ReplicateClient
 from replicate.exceptions import ReplicateError
 from replicate.prediction import Prediction
->>>>>>> main
 
 
 class ReplicateLargeLanguageModel(_CommonReplicate, LargeLanguageModel):

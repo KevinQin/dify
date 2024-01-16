@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-from http import HTTPStatus
-from typing import Optional, Generator, Union, List
-import dashscope
-from dashscope.api_entities.dashscope_response import DashScopeAPIResponse
-from dashscope.common.error import AuthenticationError, RequestFailure, \
-    InvalidParameter, UnsupportedModel, ServiceUnavailableError, UnsupportedHTTPMethod
-
-from langchain.llms.tongyi import generate_with_retry, stream_generate_with_retry
-
-from core.model_runtime.entities.message_entities import PromptMessage, PromptMessageTool, UserPromptMessage, AssistantPromptMessage, \
-    SystemPromptMessage
-from core.model_runtime.entities.llm_entities import LLMResult, LLMResultChunk, \
-    LLMResultChunkDelta
-from core.model_runtime.errors.invoke import InvokeConnectionError, InvokeServerUnavailableError, InvokeRateLimitError, \
-    InvokeAuthorizationError, InvokeBadRequestError, InvokeError
-from core.model_runtime.errors.validate import CredentialsValidateFailedError
-from core.model_runtime.model_providers.__base.large_language_model import LargeLanguageModel
-
-from ._client import EnhanceTongyi
-
-=======
 from typing import Generator, List, Optional, Union
 
 from dashscope import get_tokenizer
@@ -39,7 +17,6 @@ from langchain.llms.tongyi import generate_with_retry, stream_generate_with_retr
 from ._client import EnhanceTongyi
 
 
->>>>>>> main
 class TongyiLargeLanguageModel(LargeLanguageModel):
 
     def _invoke(self, model: str, credentials: dict,
@@ -74,28 +51,12 @@ class TongyiLargeLanguageModel(LargeLanguageModel):
         :param tools: tools for tool calling
         :return:
         """
-<<<<<<< HEAD
-        # transform credentials to kwargs for model instance
-        credentials_kwargs = self._to_credential_kwargs(credentials)
-
-        response = dashscope.Tokenization.call(
-            model=model,
-            prompt=self._convert_messages_to_prompt(prompt_messages),
-            **credentials_kwargs
-        )
-        
-        if response.status_code == HTTPStatus.OK:
-            return response['usage']['input_tokens']
-        else:
-            raise self._invoke_error_mapping[InvokeBadRequestError][0](response['message'])
-=======
         tokenizer = get_tokenizer(model)
 
         # convert string to token ids
         tokens = tokenizer.encode(self._convert_messages_to_prompt(prompt_messages))
 
         return len(tokens)
->>>>>>> main
 
     def validate_credentials(self, model: str, credentials: dict) -> None:
         """
@@ -151,12 +112,6 @@ class TongyiLargeLanguageModel(LargeLanguageModel):
 
         params = {
             'model': model,
-<<<<<<< HEAD
-            'prompt': self._convert_messages_to_prompt(prompt_messages),
-            **model_parameters,
-            **credentials_kwargs
-        }
-=======
             **model_parameters,
             **credentials_kwargs
         }
@@ -168,15 +123,11 @@ class TongyiLargeLanguageModel(LargeLanguageModel):
         else:
             params['prompt'] = self._convert_messages_to_prompt(prompt_messages)
 
->>>>>>> main
         if stream:
             responses = stream_generate_with_retry(
                 client, 
                 stream=True,
-<<<<<<< HEAD
-=======
                 incremental_output=True,
->>>>>>> main
                 **params
             )
 
@@ -317,8 +268,6 @@ class TongyiLargeLanguageModel(LargeLanguageModel):
         # trim off the trailing ' ' that might come from the "Assistant: "
         return text.rstrip()
 
-<<<<<<< HEAD
-=======
     def _convert_prompt_messages_to_tongyi_messages(self, prompt_messages: list[PromptMessage]) -> list[dict]:
         """
         Convert prompt messages to tongyi messages
@@ -348,7 +297,6 @@ class TongyiLargeLanguageModel(LargeLanguageModel):
 
         return tongyi_messages
 
->>>>>>> main
     @property
     def _invoke_error_mapping(self) -> dict[type[InvokeError], list[type[Exception]]]:
         """

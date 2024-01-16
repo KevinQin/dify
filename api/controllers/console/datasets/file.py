@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-from flask import request, current_app
-from flask_login import current_user
-
-import services
-from libs.login import login_required
-from flask_restful import Resource, marshal_with
-
-from controllers.console import api
-from controllers.console.datasets.error import NoFileUploadedError, TooManyFilesError, FileTooLargeError, \
-    UnsupportedFileTypeError
-
-from controllers.console.setup import setup_required
-from controllers.console.wraps import account_initialization_required
-from fields.file_fields import upload_config_fields, file_fields
-
-=======
 import services
 from controllers.console import api
 from controllers.console.datasets.error import (FileTooLargeError, NoFileUploadedError, TooManyFilesError,
@@ -26,7 +9,6 @@ from flask import current_app, request
 from flask_login import current_user
 from flask_restful import Resource, marshal_with
 from libs.login import login_required
->>>>>>> main
 from services.file_service import FileService
 
 PREVIEW_WORDS_LIMIT = 3000

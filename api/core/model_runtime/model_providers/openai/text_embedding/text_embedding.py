@@ -4,22 +4,12 @@ from typing import Optional, Tuple
 
 import numpy as np
 import tiktoken
-<<<<<<< HEAD
-from openai import OpenAI
-
-from core.model_runtime.entities.model_entities import PriceType
-from core.model_runtime.entities.text_embedding_entities import TextEmbeddingResult, EmbeddingUsage
-from core.model_runtime.errors.validate import CredentialsValidateFailedError
-from core.model_runtime.model_providers.__base.text_embedding_model import TextEmbeddingModel
-from core.model_runtime.model_providers.openai._common import _CommonOpenAI
-=======
 from core.model_runtime.entities.model_entities import PriceType
 from core.model_runtime.entities.text_embedding_entities import EmbeddingUsage, TextEmbeddingResult
 from core.model_runtime.errors.validate import CredentialsValidateFailedError
 from core.model_runtime.model_providers.__base.text_embedding_model import TextEmbeddingModel
 from core.model_runtime.model_providers.openai._common import _CommonOpenAI
 from openai import OpenAI
->>>>>>> main
 
 
 class OpenAITextEmbeddingModel(_CommonOpenAI, TextEmbeddingModel):

@@ -1,19 +1,9 @@
-<<<<<<< HEAD
-from pydantic import BaseModel
-
-from core.model_runtime.entities.llm_entities import LLMMode
-from core.model_runtime.entities.model_entities import ModelFeature, ModelType, FetchFrom, ParameterRule, \
-    DefaultParameterName, PriceConfig
-from core.model_runtime.entities.model_entities import AIModelEntity, I18nObject
-from core.model_runtime.entities.defaults import PARAMETER_RULE_TEMPLATE
-=======
 from core.model_runtime.entities.defaults import PARAMETER_RULE_TEMPLATE
 from core.model_runtime.entities.llm_entities import LLMMode
 from core.model_runtime.entities.model_entities import (AIModelEntity, DefaultParameterName, FetchFrom, I18nObject,
                                                         ModelFeature, ModelPropertyKey, ModelType, ParameterRule,
                                                         PriceConfig)
 from pydantic import BaseModel
->>>>>>> main
 
 AZURE_OPENAI_API_VERSION = '2023-12-01-preview'
 
@@ -49,13 +39,8 @@ LLM_BASE_MODELS = [
             ],
             fetch_from=FetchFrom.CUSTOMIZABLE_MODEL,
             model_properties={
-<<<<<<< HEAD
-                'mode': LLMMode.CHAT.value,
-                'context_size': 4096,
-=======
                 ModelPropertyKey.MODE: LLMMode.CHAT.value,
                 ModelPropertyKey.CONTEXT_SIZE: 4096,
->>>>>>> main
             },
             parameter_rules=[
                 ParameterRule(
@@ -98,13 +83,8 @@ LLM_BASE_MODELS = [
             ],
             fetch_from=FetchFrom.CUSTOMIZABLE_MODEL,
             model_properties={
-<<<<<<< HEAD
-                'mode': LLMMode.CHAT.value,
-                'context_size': 16385,
-=======
                 ModelPropertyKey.MODE: LLMMode.CHAT.value,
                 ModelPropertyKey.CONTEXT_SIZE: 16385,
->>>>>>> main
             },
             parameter_rules=[
                 ParameterRule(
@@ -147,13 +127,8 @@ LLM_BASE_MODELS = [
             ],
             fetch_from=FetchFrom.CUSTOMIZABLE_MODEL,
             model_properties={
-<<<<<<< HEAD
-                'mode': LLMMode.CHAT.value,
-                'context_size': 8192,
-=======
                 ModelPropertyKey.MODE: LLMMode.CHAT.value,
                 ModelPropertyKey.CONTEXT_SIZE: 8192,
->>>>>>> main
             },
             parameter_rules=[
                 ParameterRule(
@@ -226,13 +201,8 @@ LLM_BASE_MODELS = [
             ],
             fetch_from=FetchFrom.CUSTOMIZABLE_MODEL,
             model_properties={
-<<<<<<< HEAD
-                'mode': LLMMode.CHAT.value,
-                'context_size': 32768,
-=======
                 ModelPropertyKey.MODE: LLMMode.CHAT.value,
                 ModelPropertyKey.CONTEXT_SIZE: 32768,
->>>>>>> main
             },
             parameter_rules=[
                 ParameterRule(
@@ -305,13 +275,8 @@ LLM_BASE_MODELS = [
             ],
             fetch_from=FetchFrom.CUSTOMIZABLE_MODEL,
             model_properties={
-<<<<<<< HEAD
-                'mode': LLMMode.CHAT.value,
-                'context_size': 128000,
-=======
                 ModelPropertyKey.MODE: LLMMode.CHAT.value,
                 ModelPropertyKey.CONTEXT_SIZE: 128000,
->>>>>>> main
             },
             parameter_rules=[
                 ParameterRule(
@@ -330,11 +295,7 @@ LLM_BASE_MODELS = [
                     name='frequency_penalty',
                     **PARAMETER_RULE_TEMPLATE[DefaultParameterName.FREQUENCY_PENALTY],
                 ),
-<<<<<<< HEAD
-                _get_max_tokens(default=512, min_val=1, max_val=128000),
-=======
                 _get_max_tokens(default=512, min_val=1, max_val=4096),
->>>>>>> main
                 ParameterRule(
                     name='seed',
                     label=I18nObject(
@@ -387,13 +348,8 @@ LLM_BASE_MODELS = [
             ],
             fetch_from=FetchFrom.CUSTOMIZABLE_MODEL,
             model_properties={
-<<<<<<< HEAD
-                'mode': LLMMode.CHAT.value,
-                'context_size': 128000,
-=======
                 ModelPropertyKey.MODE: LLMMode.CHAT.value,
                 ModelPropertyKey.CONTEXT_SIZE: 128000,
->>>>>>> main
             },
             parameter_rules=[
                 ParameterRule(
@@ -412,11 +368,7 @@ LLM_BASE_MODELS = [
                     name='frequency_penalty',
                     **PARAMETER_RULE_TEMPLATE[DefaultParameterName.FREQUENCY_PENALTY],
                 ),
-<<<<<<< HEAD
-                _get_max_tokens(default=512, min_val=1, max_val=128000),
-=======
                 _get_max_tokens(default=512, min_val=1, max_val=4096),
->>>>>>> main
                 ParameterRule(
                     name='seed',
                     label=I18nObject(
@@ -466,13 +418,8 @@ LLM_BASE_MODELS = [
             model_type=ModelType.LLM,
             fetch_from=FetchFrom.CUSTOMIZABLE_MODEL,
             model_properties={
-<<<<<<< HEAD
-                'mode': LLMMode.COMPLETION.value,
-                'context_size': 4096,
-=======
                 ModelPropertyKey.MODE: LLMMode.COMPLETION.value,
                 ModelPropertyKey.CONTEXT_SIZE: 4096,
->>>>>>> main
             },
             parameter_rules=[
                 ParameterRule(
@@ -511,13 +458,8 @@ LLM_BASE_MODELS = [
             model_type=ModelType.LLM,
             fetch_from=FetchFrom.CUSTOMIZABLE_MODEL,
             model_properties={
-<<<<<<< HEAD
-                'mode': LLMMode.COMPLETION.value,
-                'context_size': 4096,
-=======
                 ModelPropertyKey.MODE: LLMMode.COMPLETION.value,
                 ModelPropertyKey.CONTEXT_SIZE: 4096,
->>>>>>> main
             },
             parameter_rules=[
                 ParameterRule(
@@ -559,13 +501,8 @@ EMBEDDING_BASE_MODELS = [
             fetch_from=FetchFrom.CUSTOMIZABLE_MODEL,
             model_type=ModelType.TEXT_EMBEDDING,
             model_properties={
-<<<<<<< HEAD
-                'context_size': 8097,
-                'max_chunks': 32,
-=======
                 ModelPropertyKey.CONTEXT_SIZE: 8097,
                 ModelPropertyKey.MAX_CHUNKS: 32,
->>>>>>> main
             },
             pricing=PriceConfig(
                 input=0.0001,

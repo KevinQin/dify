@@ -607,11 +607,7 @@ class ProviderManager:
                 quota_used=provider_record.quota_used,
                 quota_limit=provider_record.quota_limit,
                 is_valid=provider_record.quota_limit > provider_record.quota_used or provider_record.quota_limit == -1,
-<<<<<<< HEAD
-                restrict_llms=provider_quota.restrict_llms
-=======
                 restrict_models=provider_quota.restrict_models
->>>>>>> main
             )
 
             quota_configurations.append(quota_configuration)

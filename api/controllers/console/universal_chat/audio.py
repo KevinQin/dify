@@ -1,24 +1,6 @@
 # -*- coding:utf-8 -*-
 import logging
 
-<<<<<<< HEAD
-from flask import request
-from werkzeug.exceptions import InternalServerError
-
-import services
-from controllers.console import api
-from controllers.console.app.error import AppUnavailableError, ProviderNotInitializeError, \
-    ProviderQuotaExceededError, ProviderModelCurrentlyNotSupportError, CompletionRequestError, \
-    NoAudioUploadedError, AudioTooLargeError, \
-    UnsupportedAudioTypeError, ProviderNotSupportSpeechToTextError
-from controllers.console.universal_chat.wraps import UniversalChatResource
-from core.errors.error import ProviderTokenNotInitError, QuotaExceededError, ModelCurrentlyNotSupportError
-from core.model_runtime.errors.invoke import InvokeError
-from services.audio_service import AudioService
-from services.errors.audio import NoAudioUploadedServiceError, AudioTooLargeServiceError, \
-    UnsupportedAudioTypeServiceError, ProviderNotSupportSpeechToTextServiceError
-from models.model import AppModelConfig
-=======
 import services
 from controllers.console import api
 from controllers.console.app.error import (AppUnavailableError, AudioTooLargeError, CompletionRequestError,
@@ -34,7 +16,6 @@ from services.audio_service import AudioService
 from services.errors.audio import (AudioTooLargeServiceError, NoAudioUploadedServiceError,
                                    ProviderNotSupportSpeechToTextServiceError, UnsupportedAudioTypeServiceError)
 from werkzeug.exceptions import InternalServerError
->>>>>>> main
 
 
 class UniversalChatAudioApi(UniversalChatResource):

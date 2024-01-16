@@ -4,17 +4,6 @@ from typing import Optional
 
 import numpy as np
 import requests
-<<<<<<< HEAD
-from huggingface_hub import InferenceClient, HfApi
-
-from core.model_runtime.entities.common_entities import I18nObject
-from core.model_runtime.entities.model_entities import AIModelEntity, FetchFrom, ModelType, PriceType
-from core.model_runtime.entities.text_embedding_entities import TextEmbeddingResult, EmbeddingUsage
-from core.model_runtime.errors.validate import CredentialsValidateFailedError
-from core.model_runtime.model_providers.__base.text_embedding_model import TextEmbeddingModel
-from core.model_runtime.model_providers.huggingface_hub._common import _CommonHuggingfaceHub
-
-=======
 from core.model_runtime.entities.common_entities import I18nObject
 from core.model_runtime.entities.model_entities import AIModelEntity, FetchFrom, ModelType, PriceType
 from core.model_runtime.entities.text_embedding_entities import EmbeddingUsage, TextEmbeddingResult
@@ -22,7 +11,6 @@ from core.model_runtime.errors.validate import CredentialsValidateFailedError
 from core.model_runtime.model_providers.__base.text_embedding_model import TextEmbeddingModel
 from core.model_runtime.model_providers.huggingface_hub._common import _CommonHuggingfaceHub
 from huggingface_hub import HfApi, InferenceClient
->>>>>>> main
 
 HUGGINGFACE_ENDPOINT_API = 'https://api.endpoints.huggingface.cloud/v2/endpoint/'
 

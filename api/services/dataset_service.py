@@ -28,14 +28,6 @@ from services.errors.dataset import DatasetNameDuplicateError
 from services.errors.document import DocumentIndexingError
 from services.errors.file import FileNotExistsError
 from services.vector_service import VectorService
-<<<<<<< HEAD
-from tasks.clean_notion_document_task import clean_notion_document_task
-from tasks.deal_dataset_vector_index_task import deal_dataset_vector_index_task
-from tasks.document_indexing_task import document_indexing_task
-from tasks.document_indexing_update_task import document_indexing_update_task
-from tasks.recover_document_indexing_task import recover_document_indexing_task
-from tasks.delete_segment_from_index_task import delete_segment_from_index_task
-=======
 from sqlalchemy import func
 from tasks.clean_notion_document_task import clean_notion_document_task
 from tasks.deal_dataset_vector_index_task import deal_dataset_vector_index_task
@@ -43,7 +35,6 @@ from tasks.delete_segment_from_index_task import delete_segment_from_index_task
 from tasks.document_indexing_task import document_indexing_task
 from tasks.document_indexing_update_task import document_indexing_update_task
 from tasks.recover_document_indexing_task import recover_document_indexing_task
->>>>>>> main
 
 
 class DatasetService:

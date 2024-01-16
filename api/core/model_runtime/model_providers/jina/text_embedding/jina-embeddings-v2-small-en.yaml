@@ -6,8 +6,4 @@ model_properties:
 pricing:
   input: '0.001'
   unit: '0.001'
-<<<<<<< HEAD
   currency: USD
-=======
-  currency: USD
->>>>>>> main

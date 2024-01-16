@@ -1,25 +1,13 @@
 import time
-<<<<<<< HEAD
-from typing import Optional, List, Tuple
-
-from langchain.schema.language_model import _get_token_ids_default_method
-
-from core.model_runtime.entities.model_entities import PriceType
-from core.model_runtime.entities.text_embedding_entities import TextEmbeddingResult, EmbeddingUsage
-=======
 from typing import List, Optional, Tuple
 
 from core.model_runtime.entities.model_entities import PriceType
 from core.model_runtime.entities.text_embedding_entities import EmbeddingUsage, TextEmbeddingResult
->>>>>>> main
 from core.model_runtime.errors.validate import CredentialsValidateFailedError
 from core.model_runtime.model_providers.__base.text_embedding_model import TextEmbeddingModel
 from core.model_runtime.model_providers.zhipuai._client import ZhipuModelAPI
 from core.model_runtime.model_providers.zhipuai._common import _CommonZhipuaiAI
-<<<<<<< HEAD
-=======
 from langchain.schema.language_model import _get_token_ids_default_method
->>>>>>> main
 
 
 class ZhipuAITextEmbeddingModel(_CommonZhipuaiAI, TextEmbeddingModel):
@@ -66,11 +54,7 @@ class ZhipuAITextEmbeddingModel(_CommonZhipuaiAI, TextEmbeddingModel):
         
         total_num_tokens = 0
         for text in texts:
-<<<<<<< HEAD
-            total_num_tokens += len(_get_token_ids_default_method(text))
-=======
             total_num_tokens += self._get_num_tokens_by_gpt2(text)
->>>>>>> main
 
         return total_num_tokens
 

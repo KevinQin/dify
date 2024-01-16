@@ -1,26 +1,6 @@
 # -*- coding:utf-8 -*-
 import logging
 
-<<<<<<< HEAD
-from flask import request
-from flask_login import current_user
-from libs.login import login_required
-from flask_restful import Resource, fields, marshal_with, reqparse, marshal, inputs
-
-from controllers.console import api
-from controllers.console.admin import admin_required
-from controllers.console.setup import setup_required
-from controllers.console.error import AccountNotLinkTenantError
-from controllers.console.wraps import account_initialization_required, cloud_edition_billing_resource_check
-from controllers.console.datasets.error import NoFileUploadedError, TooManyFilesError, FileTooLargeError, UnsupportedFileTypeError
-from libs.helper import TimestampField
-from extensions.ext_database import db
-from models.account import Tenant
-import services
-from services.account_service import TenantService
-from services.workspace_service import WorkspaceService
-from services.file_service import FileService
-=======
 import services
 from controllers.console import api
 from controllers.console.admin import admin_required
@@ -39,7 +19,6 @@ from models.account import Tenant
 from services.account_service import TenantService
 from services.file_service import FileService
 from services.workspace_service import WorkspaceService
->>>>>>> main
 
 provider_fields = {
     'provider_name': fields.String,

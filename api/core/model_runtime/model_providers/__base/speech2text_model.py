@@ -1,10 +1,6 @@
 import os
 from abc import abstractmethod
-<<<<<<< HEAD
-from typing import Optional, IO
-=======
 from typing import IO, Optional
->>>>>>> main
 
 from core.model_runtime.entities.model_entities import ModelType
 from core.model_runtime.model_providers.__base.ai_model import AIModel

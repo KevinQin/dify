@@ -459,12 +459,6 @@ class GenerateTaskPipeline:
                     "files": files
                 })
         else:
-<<<<<<< HEAD
-            prompts.append({
-                "role": 'user',
-                "text": prompt_messages[0].content
-            })
-=======
             prompt_message = prompt_messages[0]
             text = ''
             files = []
@@ -492,7 +486,6 @@ class GenerateTaskPipeline:
                 params['files'] = files
 
             prompts.append(params)
->>>>>>> main
 
         return prompts
 

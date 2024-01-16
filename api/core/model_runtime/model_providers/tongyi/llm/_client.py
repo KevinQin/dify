@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-from typing import Dict, Any, List, Optional
-=======
 from typing import Any, Dict, List, Optional
->>>>>>> main
 
 from langchain.callbacks.manager import CallbackManagerForLLMRun
 from langchain.llms import Tongyi

@@ -1,22 +1,8 @@
-<<<<<<< HEAD
-=======
 import json
->>>>>>> main
 import time
 from decimal import Decimal
 from typing import Optional
 from urllib.parse import urljoin
-<<<<<<< HEAD
-import requests
-import json
-
-import numpy as np
-
-from core.model_runtime.entities.common_entities import I18nObject
-from core.model_runtime.entities.model_entities import PriceType, ModelPropertyKey, ModelType, AIModelEntity, FetchFrom, \
-    PriceConfig
-from core.model_runtime.entities.text_embedding_entities import TextEmbeddingResult, EmbeddingUsage
-=======
 
 import numpy as np
 import requests
@@ -24,7 +10,6 @@ from core.model_runtime.entities.common_entities import I18nObject
 from core.model_runtime.entities.model_entities import (AIModelEntity, FetchFrom, ModelPropertyKey, ModelType,
                                                         PriceConfig, PriceType)
 from core.model_runtime.entities.text_embedding_entities import EmbeddingUsage, TextEmbeddingResult
->>>>>>> main
 from core.model_runtime.errors.validate import CredentialsValidateFailedError
 from core.model_runtime.model_providers.__base.text_embedding_model import TextEmbeddingModel
 from core.model_runtime.model_providers.openai_api_compatible._common import _CommonOAI_API_Compat

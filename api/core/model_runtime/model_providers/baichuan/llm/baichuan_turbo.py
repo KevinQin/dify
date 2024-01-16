@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-from os.path import join
-from typing import List, Optional, Generator, Union, Dict, Any
-from core.model_runtime.model_providers.baichuan.llm.baichuan_turbo_errors import \
-    InsufficientAccountBalance, InvalidAPIKeyError, InternalServerError, RateLimitReachedError, InvalidAuthenticationError, BadRequestError
-from enum import Enum
-from json import dumps, loads
-from requests import post
-from time import time
-from hashlib import md5
-=======
 from enum import Enum
 from hashlib import md5
 from json import dumps, loads
@@ -24,7 +13,6 @@ from core.model_runtime.model_providers.baichuan.llm.baichuan_turbo_errors impor
                                                                                    RateLimitReachedError)
 from requests import post
 
->>>>>>> main
 
 class BaichuanMessage:
     class Role(Enum):

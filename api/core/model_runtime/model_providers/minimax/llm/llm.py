@@ -1,19 +1,4 @@
 from typing import Generator, List, Optional, Union
-<<<<<<< HEAD
-from core.model_runtime.model_providers.minimax.llm.errors import BadRequestError, InvalidAPIKeyError, \
-    InternalServerError, RateLimitReachedError, InvalidAuthenticationError, InsufficientAccountBalanceError
-from core.model_runtime.model_providers.minimax.llm.types import MinimaxMessage
-from core.model_runtime.model_providers.minimax.llm.chat_completion import MinimaxChatCompletion
-from core.model_runtime.model_providers.minimax.llm.chat_completion_pro import MinimaxChatCompletionPro
-
-from core.model_runtime.entities.llm_entities import LLMResult, LLMUsage, LLMResultChunk, LLMResultChunkDelta, LLMMode
-from core.model_runtime.entities.message_entities import PromptMessage, PromptMessageTool, AssistantPromptMessage, UserPromptMessage, SystemPromptMessage
-from core.model_runtime.entities.model_entities import AIModelEntity, ParameterRule, ParameterType, FetchFrom, ModelType
-from core.model_runtime.model_providers.__base.large_language_model import LargeLanguageModel
-from core.model_runtime.errors.invoke import InvokeConnectionError, InvokeServerUnavailableError, InvokeRateLimitError, \
-    InvokeAuthorizationError, InvokeBadRequestError, InvokeError
-from core.model_runtime.errors.validate import CredentialsValidateFailedError
-=======
 
 from core.model_runtime.entities.llm_entities import LLMMode, LLMResult, LLMResultChunk, LLMResultChunkDelta, LLMUsage
 from core.model_runtime.entities.message_entities import (AssistantPromptMessage, PromptMessage, PromptMessageTool,
@@ -30,7 +15,6 @@ from core.model_runtime.model_providers.minimax.llm.errors import (BadRequestErr
                                                                    InvalidAuthenticationError, RateLimitReachedError)
 from core.model_runtime.model_providers.minimax.llm.types import MinimaxMessage
 
->>>>>>> main
 
 class MinimaxLargeLanguageModel(LargeLanguageModel):
     model_apis = {

@@ -5,22 +5,12 @@ from collections import OrderedDict
 from typing import Optional
 
 import yaml
-<<<<<<< HEAD
-from pydantic import BaseModel
-
-from core.model_runtime.entities.model_entities import ModelType
-from core.model_runtime.entities.provider_entities import SimpleProviderEntity, ProviderConfig, ProviderEntity
-from core.model_runtime.model_providers.__base.model_provider import ModelProvider
-from core.model_runtime.schema_validators.model_credential_schema_validator import ModelCredentialSchemaValidator
-from core.model_runtime.schema_validators.provider_credential_schema_validator import ProviderCredentialSchemaValidator
-=======
 from core.model_runtime.entities.model_entities import ModelType
 from core.model_runtime.entities.provider_entities import ProviderConfig, ProviderEntity, SimpleProviderEntity
 from core.model_runtime.model_providers.__base.model_provider import ModelProvider
 from core.model_runtime.schema_validators.model_credential_schema_validator import ModelCredentialSchemaValidator
 from core.model_runtime.schema_validators.provider_credential_schema_validator import ProviderCredentialSchemaValidator
 from pydantic import BaseModel
->>>>>>> main
 
 logger = logging.getLogger(__name__)
 
@@ -71,11 +61,7 @@ class ModelProviderFactory:
         # return providers
         return providers
 
-<<<<<<< HEAD
-    def provider_credentials_validate(self, provider: str, credentials: dict) -> None:
-=======
     def provider_credentials_validate(self, provider: str, credentials: dict) -> dict:
->>>>>>> main
         """
         Validate provider credentials
 
@@ -94,15 +80,6 @@ class ModelProviderFactory:
 
         # validate provider credential schema
         validator = ProviderCredentialSchemaValidator(provider_credential_schema)
-<<<<<<< HEAD
-        validator.validate_and_filter(credentials)
-
-        # validate the credentials, raise exception if validation failed
-        model_provider_instance.validate_provider_credentials(credentials)
-
-    def model_credentials_validate(self, provider: str, model_type: ModelType,
-                                   model: str, credentials: dict) -> None:
-=======
         filtered_credentials = validator.validate_and_filter(credentials)
 
         # validate the credentials, raise exception if validation failed
@@ -112,7 +89,6 @@ class ModelProviderFactory:
 
     def model_credentials_validate(self, provider: str, model_type: ModelType,
                                    model: str, credentials: dict) -> dict:
->>>>>>> main
         """
         Validate model credentials
 
@@ -133,23 +109,15 @@ class ModelProviderFactory:
 
         # validate model credential schema
         validator = ModelCredentialSchemaValidator(model_type, model_credential_schema)
-<<<<<<< HEAD
-        validator.validate_and_filter(credentials)
-=======
         filtered_credentials = validator.validate_and_filter(credentials)
->>>>>>> main
 
         # get model instance of the model type
         model_instance = model_provider_instance.get_model_instance(model_type)
 
         # call validate_credentials method of model type to validate credentials, raise exception if validation failed
-<<<<<<< HEAD
-        model_instance.validate_credentials(model, credentials)
-=======
         model_instance.validate_credentials(model, filtered_credentials)
 
         return filtered_credentials
->>>>>>> main
 
     def get_models(self,
                    provider: Optional[str] = None,

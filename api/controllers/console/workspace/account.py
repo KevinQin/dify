@@ -2,23 +2,6 @@
 from datetime import datetime
 
 import pytz
-<<<<<<< HEAD
-from flask import current_app, request
-from flask_login import current_user
-from libs.login import login_required
-from flask_restful import Resource, reqparse, fields, marshal_with
-
-from services.errors.account import CurrentPasswordIncorrectError as ServiceCurrentPasswordIncorrectError
-from controllers.console import api
-from controllers.console.setup import setup_required
-from controllers.console.workspace.error import AccountAlreadyInitedError, InvalidInvitationCodeError, \
-    RepeatPasswordNotMatchError, CurrentPasswordIncorrectError
-from controllers.console.wraps import account_initialization_required
-from libs.helper import TimestampField, supported_language, timezone
-from extensions.ext_database import db
-from models.account import InvitationCode, AccountIntegrate
-from services.account_service import AccountService
-=======
 from controllers.console import api
 from controllers.console.setup import setup_required
 from controllers.console.workspace.error import (AccountAlreadyInitedError, CurrentPasswordIncorrectError,
@@ -33,7 +16,6 @@ from libs.login import login_required
 from models.account import AccountIntegrate, InvitationCode
 from services.account_service import AccountService
 from services.errors.account import CurrentPasswordIncorrectError as ServiceCurrentPasswordIncorrectError
->>>>>>> main
 
 account_fields = {
     'id': fields.String,

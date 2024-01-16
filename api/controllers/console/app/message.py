@@ -28,10 +28,7 @@ from services.errors.app import MoreLikeThisDisabledError
 from services.errors.conversation import ConversationNotExistsError
 from services.errors.message import MessageNotExistsError
 from services.message_service import MessageService
-<<<<<<< HEAD
-=======
 from werkzeug.exceptions import Forbidden, InternalServerError, NotFound
->>>>>>> main
 
 
 class ChatMessageListApi(Resource):

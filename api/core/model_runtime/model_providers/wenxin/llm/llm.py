@@ -1,15 +1,4 @@
 from typing import Generator, List, Optional, Union, cast
-<<<<<<< HEAD
-from core.model_runtime.entities.llm_entities import LLMResult, LLMUsage, LLMResultChunk, LLMResultChunkDelta
-from core.model_runtime.entities.message_entities import PromptMessage, PromptMessageTool, AssistantPromptMessage, UserPromptMessage, SystemPromptMessage
-from core.model_runtime.model_providers.__base.large_language_model import LargeLanguageModel
-from core.model_runtime.errors.invoke import InvokeConnectionError, InvokeServerUnavailableError, InvokeRateLimitError, \
-    InvokeAuthorizationError, InvokeBadRequestError, InvokeError
-from core.model_runtime.errors.validate import CredentialsValidateFailedError
-from core.model_runtime.model_providers.wenxin.llm.ernie_bot import ErnieBotModel, ErnieMessage, BaiduAccessToken
-from core.model_runtime.model_providers.wenxin.llm.ernie_bot_errors import \
-    InsufficientAccountBalance, InvalidAPIKeyError, InternalServerError, RateLimitReachedError, InvalidAuthenticationError, BadRequestError
-=======
 
 from core.model_runtime.entities.llm_entities import LLMResult, LLMResultChunk, LLMResultChunkDelta, LLMUsage
 from core.model_runtime.entities.message_entities import (AssistantPromptMessage, PromptMessage, PromptMessageTool,
@@ -24,7 +13,6 @@ from core.model_runtime.model_providers.wenxin.llm.ernie_bot_errors import (BadR
                                                                             InvalidAuthenticationError,
                                                                             RateLimitReachedError)
 
->>>>>>> main
 
 class ErnieBotLarguageModel(LargeLanguageModel):
     def _invoke(self, model: str, credentials: dict, 

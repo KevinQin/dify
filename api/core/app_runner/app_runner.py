@@ -257,12 +257,9 @@ class AppRunner:
             if not usage and result.delta.usage:
                 usage = result.delta.usage
 
-<<<<<<< HEAD
-=======
         if not usage:
             usage = LLMUsage.empty_usage()
 
->>>>>>> main
         llm_result = LLMResult(
             model=model,
             prompt_messages=prompt_messages,

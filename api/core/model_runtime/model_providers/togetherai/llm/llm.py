@@ -1,17 +1,9 @@
 from typing import Generator, List, Optional, Union
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 from core.model_runtime.entities.llm_entities import LLMResult
 from core.model_runtime.entities.message_entities import PromptMessage, PromptMessageTool
 from core.model_runtime.entities.model_entities import AIModelEntity
 from core.model_runtime.model_providers.openai_api_compatible.llm.llm import OAIAPICompatLargeLanguageModel
 
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 class TogetherAILargeLanguageModel(OAIAPICompatLargeLanguageModel):
 
     def _update_endpoint_url(self, credentials: dict):

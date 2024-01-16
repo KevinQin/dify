@@ -1,15 +1,8 @@
-<<<<<<< HEAD
-from transformers import GPT2Tokenizer as TransformerGPT2Tokenizer
-from os.path import join, abspath, dirname
-from typing import Any
-from threading import Lock
-=======
 from os.path import abspath, dirname, join
 from threading import Lock
 from typing import Any
 
 from transformers import GPT2Tokenizer as TransformerGPT2Tokenizer
->>>>>>> main
 
 _tokenizer = None
 _lock = Lock()
