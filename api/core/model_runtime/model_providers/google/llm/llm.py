@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from typing import Optional, Generator, Union, List
 
 import google.generativeai as genai
@@ -19,6 +20,26 @@ from core.model_runtime.model_providers import google
 from core.model_runtime.model_providers.__base.large_language_model import LargeLanguageModel
 
 import logging
+=======
+import logging
+from typing import Generator, List, Optional, Union
+
+import google.api_core.exceptions as exceptions
+import google.generativeai as genai
+import google.generativeai.client as client
+from core.model_runtime.entities.llm_entities import LLMResult, LLMResultChunk, LLMResultChunkDelta
+from core.model_runtime.entities.message_entities import (AssistantPromptMessage, PromptMessage,
+                                                          PromptMessageContentType, PromptMessageRole,
+                                                          PromptMessageTool, SystemPromptMessage, UserPromptMessage)
+from core.model_runtime.errors.invoke import (InvokeAuthorizationError, InvokeBadRequestError, InvokeConnectionError,
+                                              InvokeError, InvokeRateLimitError, InvokeServerUnavailableError)
+from core.model_runtime.errors.validate import CredentialsValidateFailedError
+from core.model_runtime.model_providers import google
+from core.model_runtime.model_providers.__base.large_language_model import LargeLanguageModel
+from google.generativeai.types import ContentType, GenerateContentResponse, HarmBlockThreshold, HarmCategory
+from google.generativeai.types.content_types import to_part
+
+>>>>>>> main
 logger = logging.getLogger(__name__)
 
 class GoogleLargeLanguageModel(LargeLanguageModel):

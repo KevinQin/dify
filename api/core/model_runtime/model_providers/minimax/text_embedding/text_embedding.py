@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from typing import Optional
 
 from core.model_runtime.entities.model_entities import PriceType
@@ -13,6 +14,23 @@ from requests import post
 from json import dumps, loads
 
 import time
+=======
+import time
+from json import dumps, loads
+from typing import Optional
+
+from core.model_runtime.entities.model_entities import PriceType
+from core.model_runtime.entities.text_embedding_entities import EmbeddingUsage, TextEmbeddingResult
+from core.model_runtime.errors.invoke import (InvokeAuthorizationError, InvokeBadRequestError, InvokeConnectionError,
+                                              InvokeError, InvokeRateLimitError, InvokeServerUnavailableError)
+from core.model_runtime.errors.validate import CredentialsValidateFailedError
+from core.model_runtime.model_providers.__base.text_embedding_model import TextEmbeddingModel
+from core.model_runtime.model_providers.minimax.llm.errors import (BadRequestError, InsufficientAccountBalanceError,
+                                                                   InternalServerError, InvalidAPIKeyError,
+                                                                   InvalidAuthenticationError, RateLimitReachedError)
+from requests import post
+
+>>>>>>> main
 
 class MinimaxTextEmbeddingModel(TextEmbeddingModel):
     """

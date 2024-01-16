@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from typing import Optional, List, Union, Generator
 
 from huggingface_hub import InferenceClient
@@ -14,6 +15,23 @@ from core.model_runtime.entities.model_entities import ParameterRule, DefaultPar
 from core.model_runtime.errors.validate import CredentialsValidateFailedError
 from core.model_runtime.model_providers.__base.large_language_model import LargeLanguageModel
 from core.model_runtime.model_providers.huggingface_hub._common import _CommonHuggingfaceHub
+=======
+from typing import Generator, List, Optional, Union
+
+from core.model_runtime.entities.common_entities import I18nObject
+from core.model_runtime.entities.defaults import PARAMETER_RULE_TEMPLATE
+from core.model_runtime.entities.llm_entities import LLMMode, LLMResult, LLMResultChunk, LLMResultChunkDelta
+from core.model_runtime.entities.message_entities import (AssistantPromptMessage, PromptMessage, PromptMessageTool,
+                                                          SystemPromptMessage, UserPromptMessage)
+from core.model_runtime.entities.model_entities import (AIModelEntity, DefaultParameterName, FetchFrom,
+                                                        ModelPropertyKey, ModelType, ParameterRule)
+from core.model_runtime.errors.validate import CredentialsValidateFailedError
+from core.model_runtime.model_providers.__base.large_language_model import LargeLanguageModel
+from core.model_runtime.model_providers.huggingface_hub._common import _CommonHuggingfaceHub
+from huggingface_hub import InferenceClient
+from huggingface_hub.hf_api import HfApi
+from huggingface_hub.utils import BadRequestError
+>>>>>>> main
 
 
 class HuggingfaceHubLargeLanguageModel(_CommonHuggingfaceHub, LargeLanguageModel):
@@ -97,7 +115,11 @@ class HuggingfaceHubLargeLanguageModel(_CommonHuggingfaceHub, LargeLanguageModel
             fetch_from=FetchFrom.CUSTOMIZABLE_MODEL,
             model_type=ModelType.LLM,
             model_properties={
+<<<<<<< HEAD
                 'mode': LLMMode.COMPLETION.value
+=======
+                ModelPropertyKey.MODE: LLMMode.COMPLETION.value
+>>>>>>> main
             },
             parameter_rules=self._get_customizable_model_parameter_rules()
         )
@@ -135,7 +157,59 @@ class HuggingfaceHubLargeLanguageModel(_CommonHuggingfaceHub, LargeLanguageModel
             precision=0,
         )
 
+<<<<<<< HEAD
         return [temperature_rule, top_k_rule, top_p_rule]
+=======
+        max_new_tokens = ParameterRule(
+            name='max_new_tokens',
+            label={
+                'en_US': 'Max New Tokens',
+                'zh_Hans': '最大新标记',
+            },
+            type='int',
+            help={
+                'en_US': 'Maximum number of generated tokens.',
+                'zh_Hans': '生成的标记的最大数量。',
+            },
+            required=False,
+            default=20,
+            min=1,
+            max=4096,
+            precision=0,
+        )
+
+        seed = ParameterRule(
+            name='seed',
+            label={
+                'en_US': 'Random sampling seed',
+                'zh_Hans': '随机采样种子',
+            },
+            type='int',
+            help={
+                'en_US': 'Random sampling seed.',
+                'zh_Hans': '随机采样种子。',
+            },
+            required=False,
+            precision=0,
+        )
+
+        repetition_penalty = ParameterRule(
+            name='repetition_penalty',
+            label={
+                'en_US': 'Repetition Penalty',
+                'zh_Hans': '重复惩罚',
+            },
+            type='float',
+            help={
+                'en_US': 'The parameter for repetition penalty. 1.0 means no penalty.',
+                'zh_Hans': '重复惩罚的参数。1.0 表示没有惩罚。',
+            },
+            required=False,
+            precision=1,
+        )
+
+        return [temperature_rule, top_k_rule, top_p_rule, max_new_tokens, seed, repetition_penalty]
+>>>>>>> main
 
     def _handle_generate_stream_response(self,
                                          model: str,

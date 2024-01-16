@@ -4,8 +4,12 @@ from __future__ import annotations
 import logging
 import posixpath
 
+<<<<<<< HEAD
 from pydantic import Extra, BaseModel
 
+=======
+from pydantic import BaseModel, Extra
+>>>>>>> main
 from zhipuai.model_api.api import InvokeType
 from zhipuai.utils import jwt_token
 from zhipuai.utils.http_client import post, stream

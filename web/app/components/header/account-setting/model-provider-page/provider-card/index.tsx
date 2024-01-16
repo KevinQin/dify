@@ -1,5 +1,8 @@
 import type { FC } from 'react'
+<<<<<<< HEAD
 import { useSWRConfig } from 'swr'
+=======
+>>>>>>> main
 import { useTranslation } from 'react-i18next'
 import type {
   ModelProvider,
@@ -14,6 +17,10 @@ import {
   useAnthropicBuyQuota,
   useFreeQuota,
   useLanguage,
+<<<<<<< HEAD
+=======
+  useUpdateModelProviders,
+>>>>>>> main
 } from '../hooks'
 import ModelBadge from '../model-badge'
 import ProviderIcon from '../provider-icon'
@@ -48,10 +55,17 @@ const ProviderCard: FC<ProviderCardProps> = ({
 }) => {
   const { t } = useTranslation()
   const language = useLanguage()
+<<<<<<< HEAD
   const { mutate } = useSWRConfig()
   const handlePay = useAnthropicBuyQuota()
   const handleFreeQuotaSuccess = () => {
     mutate('/workspaces/current/model-providers')
+=======
+  const updateModelProviders = useUpdateModelProviders()
+  const handlePay = useAnthropicBuyQuota()
+  const handleFreeQuotaSuccess = () => {
+    updateModelProviders()
+>>>>>>> main
   }
   const handleFreeQuota = useFreeQuota(handleFreeQuotaSuccess)
   const configurateMethods = provider.configurate_methods.filter(method => method !== ConfigurateMethodEnum.fetchFromRemote)

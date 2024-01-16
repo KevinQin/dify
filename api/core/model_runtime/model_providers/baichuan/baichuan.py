@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 from core.model_runtime.model_providers.__base.model_provider import ModelProvider
 from core.model_runtime.entities.model_entities import ModelType
 from core.model_runtime.errors.validate import CredentialsValidateFailedError
 import logging
+=======
+import logging
+
+from core.model_runtime.entities.model_entities import ModelType
+from core.model_runtime.errors.validate import CredentialsValidateFailedError
+from core.model_runtime.model_providers.__base.model_provider import ModelProvider
+>>>>>>> main
 
 logger = logging.getLogger(__name__)
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from flask_login import current_user
 from flask_restful import reqparse, marshal_with, fields
 from flask_restful.inputs import int_range
@@ -10,6 +11,19 @@ from libs.helper import uuid_value, TimestampField
 from services.errors.message import MessageNotExistsError
 from services.saved_message_service import SavedMessageService
 from fields.conversation_fields import message_file_fields
+=======
+from controllers.console import api
+from controllers.console.explore.error import NotCompletionAppError
+from controllers.console.explore.wraps import InstalledAppResource
+from fields.conversation_fields import message_file_fields
+from flask_login import current_user
+from flask_restful import fields, marshal_with, reqparse
+from flask_restful.inputs import int_range
+from libs.helper import TimestampField, uuid_value
+from services.errors.message import MessageNotExistsError
+from services.saved_message_service import SavedMessageService
+from werkzeug.exceptions import NotFound
+>>>>>>> main
 
 feedback_fields = {
     'rating': fields.String

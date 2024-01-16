@@ -1,6 +1,11 @@
 import os
+<<<<<<< HEAD
 import pytest
 
+=======
+
+import pytest
+>>>>>>> main
 from core.model_runtime.entities.rerank_entities import RerankResult
 from core.model_runtime.errors.validate import CredentialsValidateFailedError
 from core.model_runtime.model_providers.cohere.rerank.rerank import CohereRerankModel

@@ -4,12 +4,20 @@ import hashlib
 import hmac
 import json
 import queue
+<<<<<<< HEAD
 from typing import Optional
 from urllib.parse import urlparse
 import ssl
 from datetime import datetime
 from time import mktime
 from urllib.parse import urlencode
+=======
+import ssl
+from datetime import datetime
+from time import mktime
+from typing import Optional
+from urllib.parse import urlencode, urlparse
+>>>>>>> main
 from wsgiref.handlers import format_date_time
 
 import websocket

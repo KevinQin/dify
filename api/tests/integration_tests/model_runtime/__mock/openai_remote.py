@@ -1,8 +1,17 @@
+<<<<<<< HEAD
 from openai.resources.models import Models
 from openai.types.model import Model
 
 from typing import List
 from time import time
+=======
+from time import time
+from typing import List
+
+from openai.resources.models import Models
+from openai.types.model import Model
+
+>>>>>>> main
 
 class MockModelClass(object):
     """

@@ -1,11 +1,18 @@
 import logging
 from typing import List, Optional
 
+<<<<<<< HEAD
 from langchain.document_loaders import PyPDFium2Loader
 from langchain.document_loaders.base import BaseLoader
 from langchain.schema import Document
 
 from extensions.ext_storage import storage
+=======
+from extensions.ext_storage import storage
+from langchain.document_loaders import PyPDFium2Loader
+from langchain.document_loaders.base import BaseLoader
+from langchain.schema import Document
+>>>>>>> main
 from models.model import UploadFile
 
 logger = logging.getLogger(__name__)

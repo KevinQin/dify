@@ -13,6 +13,7 @@ help:
   url:
     en_US: https://github.com/THUDM/ChatGLM3
 supported_model_types:
+<<<<<<< HEAD
 - llm
 configurate_methods:
 - predefined-model
@@ -26,3 +27,18 @@ provider_credential_schema:
     placeholder:
       zh_Hans: 在此输入您的 API URL
       en_US: Enter your API URL
+=======
+  - llm
+configurate_methods:
+  - predefined-model
+provider_credential_schema:
+  credential_form_schemas:
+    - variable: api_base
+      label:
+        en_US: API URL
+      type: text-input
+      required: true
+      placeholder:
+        zh_Hans: 在此输入您的 API URL
+        en_US: Enter your API URL
+>>>>>>> main

@@ -1,6 +1,7 @@
 import json
 import logging
 from abc import abstractmethod
+<<<<<<< HEAD
 from typing import List, Any, cast
 
 from langchain.embeddings.base import Embeddings
@@ -11,6 +12,18 @@ from core.index.base import BaseIndex
 from extensions.ext_database import db
 from models.dataset import Dataset, DocumentSegment, DatasetCollectionBinding
 from models.dataset import Document as DatasetDocument
+=======
+from typing import Any, List, cast
+
+from core.index.base import BaseIndex
+from extensions.ext_database import db
+from langchain.embeddings.base import Embeddings
+from langchain.schema import BaseRetriever, Document
+from langchain.vectorstores import VectorStore
+from models.dataset import Dataset, DatasetCollectionBinding
+from models.dataset import Document as DatasetDocument
+from models.dataset import DocumentSegment
+>>>>>>> main
 
 
 class BaseVectorIndex(BaseIndex):

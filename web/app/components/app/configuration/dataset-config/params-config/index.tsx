@@ -103,7 +103,11 @@ const ParamsConfig: FC = () => {
     const config = { ...tempDataSetConfigs }
     if (config.retrieval_model === RETRIEVE_TYPE.multiWay && !config.reranking_model) {
       config.reranking_model = {
+<<<<<<< HEAD
         reranking_provider_name: rerankDefaultModel?.provider,
+=======
+        reranking_provider_name: rerankDefaultModel?.provider?.provider,
+>>>>>>> main
         reranking_model_name: rerankDefaultModel?.model,
       } as any
     }

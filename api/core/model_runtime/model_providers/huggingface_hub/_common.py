@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 from huggingface_hub.utils import HfHubHTTPError, BadRequestError
 
 from core.model_runtime.errors.invoke import InvokeBadRequestError, InvokeError
+=======
+from core.model_runtime.errors.invoke import InvokeBadRequestError, InvokeError
+from huggingface_hub.utils import BadRequestError, HfHubHTTPError
+>>>>>>> main
 
 
 class _CommonHuggingfaceHub:

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from google.generativeai import GenerativeModel
 from google.generativeai.types import GenerateContentResponse
 from google.generativeai.types.generation_types import BaseGenerateContentResponse
@@ -12,6 +13,20 @@ from typing import Generator, List
 from _pytest.monkeypatch import MonkeyPatch
 
 import pytest
+=======
+from typing import Generator, List
+
+import google.generativeai.types.content_types as content_types
+import google.generativeai.types.generation_types as generation_config_types
+import google.generativeai.types.safety_types as safety_types
+import pytest
+from _pytest.monkeypatch import MonkeyPatch
+from google.ai import generativelanguage as glm
+from google.generativeai import GenerativeModel
+from google.generativeai.client import _ClientManager, configure
+from google.generativeai.types import GenerateContentResponse
+from google.generativeai.types.generation_types import BaseGenerateContentResponse
+>>>>>>> main
 
 current_api_key = ''
 

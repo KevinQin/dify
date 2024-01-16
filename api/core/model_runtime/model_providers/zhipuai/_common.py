@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 from core.model_runtime.errors.invoke import InvokeConnectionError, InvokeServerUnavailableError, InvokeRateLimitError, \
     InvokeAuthorizationError, InvokeBadRequestError, InvokeError
+=======
+from core.model_runtime.errors.invoke import (InvokeAuthorizationError, InvokeBadRequestError, InvokeConnectionError,
+                                              InvokeError, InvokeRateLimitError, InvokeServerUnavailableError)
+>>>>>>> main
 
 
 class _CommonZhipuaiAI:

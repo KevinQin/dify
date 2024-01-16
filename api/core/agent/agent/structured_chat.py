@@ -1,4 +1,5 @@
 import re
+<<<<<<< HEAD
 from typing import List, Tuple, Any, Union, Sequence, Optional, cast
 
 from langchain import BasePromptTemplate, PromptTemplate
@@ -12,12 +13,29 @@ from langchain.schema import AgentAction, AgentFinish, AIMessage, HumanMessage, 
     get_buffer_string
 from langchain.tools import BaseTool
 from langchain.agents.structured_chat.prompt import PREFIX, SUFFIX
+=======
+from typing import Any, List, Optional, Sequence, Tuple, Union, cast
+>>>>>>> main
 
 from core.agent.agent.agent_llm_callback import AgentLLMCallback
 from core.agent.agent.calc_token_mixin import CalcTokenMixin, ExceededLLMTokensLimitError
 from core.chain.llm_chain import LLMChain
 from core.entities.application_entities import ModelConfigEntity
 from core.entities.message_entities import lc_messages_to_prompt_messages
+<<<<<<< HEAD
+=======
+from langchain import BasePromptTemplate, PromptTemplate
+from langchain.agents import Agent, AgentOutputParser, StructuredChatAgent
+from langchain.agents.structured_chat.base import HUMAN_MESSAGE_TEMPLATE
+from langchain.agents.structured_chat.prompt import PREFIX, SUFFIX
+from langchain.callbacks.base import BaseCallbackManager
+from langchain.callbacks.manager import Callbacks
+from langchain.memory.prompt import SUMMARY_PROMPT
+from langchain.prompts import ChatPromptTemplate, HumanMessagePromptTemplate, SystemMessagePromptTemplate
+from langchain.schema import (AgentAction, AgentFinish, AIMessage, BaseMessage, HumanMessage, OutputParserException,
+                              get_buffer_string)
+from langchain.tools import BaseTool
+>>>>>>> main
 
 FORMAT_INSTRUCTIONS = """Use a json blob to specify a tool by providing an action key (tool name) and an action_input key (tool input).
 The nouns in the format of "Thought", "Action", "Action Input", "Final Answer" must be expressed in English.

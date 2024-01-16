@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from openai import BadRequestError, OpenAI, AzureOpenAI
 from openai.types import Completion as CompletionMessage
 from openai._types import NotGiven, NOT_GIVEN
@@ -12,6 +13,21 @@ from time import time, sleep
 from core.model_runtime.errors.invoke import InvokeAuthorizationError
 
 import re
+=======
+import re
+from time import sleep, time
+# import monkeypatch
+from typing import Any, Generator, List, Literal, Optional, Union
+
+from core.model_runtime.errors.invoke import InvokeAuthorizationError
+from openai import AzureOpenAI, BadRequestError, OpenAI
+from openai._types import NOT_GIVEN, NotGiven
+from openai.resources.completions import Completions
+from openai.types import Completion as CompletionMessage
+from openai.types.completion import CompletionChoice
+from openai.types.completion_usage import CompletionUsage
+
+>>>>>>> main
 
 class MockCompletionsClass(object):
     @staticmethod

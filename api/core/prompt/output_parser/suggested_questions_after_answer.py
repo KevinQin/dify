@@ -2,10 +2,16 @@ import json
 import re
 from typing import Any
 
+<<<<<<< HEAD
 from langchain.schema import BaseOutputParser
 
 from core.model_runtime.errors.invoke import InvokeError
 from core.prompt.prompts import SUGGESTED_QUESTIONS_AFTER_ANSWER_INSTRUCTION_PROMPT
+=======
+from core.model_runtime.errors.invoke import InvokeError
+from core.prompt.prompts import SUGGESTED_QUESTIONS_AFTER_ANSWER_INSTRUCTION_PROMPT
+from langchain.schema import BaseOutputParser
+>>>>>>> main
 
 
 class SuggestedQuestionsAfterAnswerOutputParser(BaseOutputParser):

@@ -2,10 +2,15 @@ import os
 from typing import Generator
 
 import pytest
+<<<<<<< HEAD
 
 from core.model_runtime.entities.message_entities import SystemPromptMessage, UserPromptMessage, AssistantPromptMessage
 from core.model_runtime.entities.llm_entities import LLMResult, LLMResultChunk, \
     LLMResultChunkDelta
+=======
+from core.model_runtime.entities.llm_entities import LLMResult, LLMResultChunk, LLMResultChunkDelta
+from core.model_runtime.entities.message_entities import AssistantPromptMessage, SystemPromptMessage, UserPromptMessage
+>>>>>>> main
 from core.model_runtime.errors.validate import CredentialsValidateFailedError
 from core.model_runtime.model_providers.replicate.llm.llm import ReplicateLargeLanguageModel
 

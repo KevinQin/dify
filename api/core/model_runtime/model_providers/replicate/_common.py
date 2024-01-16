@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 from replicate.exceptions import ReplicateError, ModelError
 
 from core.model_runtime.errors.invoke import InvokeBadRequestError, InvokeError
+=======
+from core.model_runtime.errors.invoke import InvokeBadRequestError, InvokeError
+from replicate.exceptions import ModelError, ReplicateError
+>>>>>>> main
 
 
 class _CommonReplicate:

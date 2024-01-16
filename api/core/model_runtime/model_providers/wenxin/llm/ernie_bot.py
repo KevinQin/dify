@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from enum import Enum
 from json import dumps, loads
 from requests import post, Response
@@ -7,6 +8,20 @@ from core.model_runtime.model_providers.wenxin.llm.ernie_bot_errors import BadRe
 from core.model_runtime.entities.message_entities import PromptMessageTool
 from datetime import datetime, timedelta
 from threading import Lock
+=======
+from datetime import datetime, timedelta
+from enum import Enum
+from json import dumps, loads
+from threading import Lock
+from typing import Any, Dict, Generator, List, Union
+
+from core.model_runtime.entities.message_entities import PromptMessageTool
+from core.model_runtime.model_providers.wenxin.llm.ernie_bot_errors import (BadRequestError, InternalServerError,
+                                                                            InvalidAPIKeyError,
+                                                                            InvalidAuthenticationError,
+                                                                            RateLimitReachedError)
+from requests import Response, post
+>>>>>>> main
 
 # map api_key to access_token
 baidu_access_tokens: Dict[str, 'BaiduAccessToken'] = {}

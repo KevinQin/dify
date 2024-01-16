@@ -1,10 +1,18 @@
+<<<<<<< HEAD
 from typing import Optional, IO
 
 from openai import OpenAI
+=======
+from typing import IO, Optional
+>>>>>>> main
 
 from core.model_runtime.errors.validate import CredentialsValidateFailedError
 from core.model_runtime.model_providers.__base.speech2text_model import Speech2TextModel
 from core.model_runtime.model_providers.openai._common import _CommonOpenAI
+<<<<<<< HEAD
+=======
+from openai import OpenAI
+>>>>>>> main
 
 
 class OpenAISpeech2TextModel(_CommonOpenAI, Speech2TextModel):

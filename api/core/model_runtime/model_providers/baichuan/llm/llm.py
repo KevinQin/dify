@@ -1,4 +1,5 @@
 from typing import Generator, List, Optional, Union, cast
+<<<<<<< HEAD
 from core.model_runtime.entities.llm_entities import LLMResult, LLMUsage, LLMResultChunk, LLMResultChunkDelta
 from core.model_runtime.entities.message_entities import PromptMessage, PromptMessageTool, AssistantPromptMessage, UserPromptMessage, SystemPromptMessage
 from core.model_runtime.model_providers.__base.large_language_model import LargeLanguageModel
@@ -9,6 +10,25 @@ from core.model_runtime.model_providers.baichuan.llm.baichuan_turbo_errors impor
     InsufficientAccountBalance, InvalidAPIKeyError, InternalServerError, RateLimitReachedError, InvalidAuthenticationError, BadRequestError
 from core.model_runtime.model_providers.baichuan.llm.baichuan_turbo import BaichuanModel, BaichuanMessage
 from core.model_runtime.model_providers.baichuan.llm.baichuan_tokenizer import BaichuanTokenizer
+=======
+
+from core.model_runtime.entities.llm_entities import LLMResult, LLMResultChunk, LLMResultChunkDelta, LLMUsage
+from core.model_runtime.entities.message_entities import (AssistantPromptMessage, PromptMessage, PromptMessageTool,
+                                                          SystemPromptMessage, UserPromptMessage)
+from core.model_runtime.errors.invoke import (InvokeAuthorizationError, InvokeBadRequestError, InvokeConnectionError,
+                                              InvokeError, InvokeRateLimitError, InvokeServerUnavailableError)
+from core.model_runtime.errors.validate import CredentialsValidateFailedError
+from core.model_runtime.model_providers.__base.large_language_model import LargeLanguageModel
+from core.model_runtime.model_providers.baichuan.llm.baichuan_tokenizer import BaichuanTokenizer
+from core.model_runtime.model_providers.baichuan.llm.baichuan_turbo import BaichuanMessage, BaichuanModel
+from core.model_runtime.model_providers.baichuan.llm.baichuan_turbo_errors import (BadRequestError,
+                                                                                   InsufficientAccountBalance,
+                                                                                   InternalServerError,
+                                                                                   InvalidAPIKeyError,
+                                                                                   InvalidAuthenticationError,
+                                                                                   RateLimitReachedError)
+
+>>>>>>> main
 
 class BaichuanLarguageModel(LargeLanguageModel):
     def _invoke(self, model: str, credentials: dict, 
@@ -79,8 +99,15 @@ class BaichuanLarguageModel(LargeLanguageModel):
         try:
             instance.generate(model=model, stream=False, messages=[
                 BaichuanMessage(content='ping', role='user')
+<<<<<<< HEAD
             ], parameters={}, timeout=10)
         except InvalidAPIKeyError as e:
+=======
+            ], parameters={
+                'max_tokens': 1,
+            }, timeout=60)
+        except (InvalidAPIKeyError, InvalidAuthenticationError) as e:
+>>>>>>> main
             raise CredentialsValidateFailedError(f"Invalid API key: {e}")
 
     def _generate(self, model: str, credentials: dict, prompt_messages: list[PromptMessage], 

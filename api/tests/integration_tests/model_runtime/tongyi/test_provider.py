@@ -1,7 +1,10 @@
 import os
 
 import pytest
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 from core.model_runtime.errors.validate import CredentialsValidateFailedError
 from core.model_runtime.model_providers.tongyi.tongyi import TongyiProvider
 

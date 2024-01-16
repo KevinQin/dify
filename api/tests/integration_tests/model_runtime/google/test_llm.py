@@ -2,6 +2,7 @@ import os
 from typing import Generator
 
 import pytest
+<<<<<<< HEAD
 
 from core.model_runtime.entities.message_entities import SystemPromptMessage, UserPromptMessage, AssistantPromptMessage,  TextPromptMessageContent, ImagePromptMessageContent
 from core.model_runtime.entities.llm_entities import LLMResult, LLMResultChunk, \
@@ -11,6 +12,17 @@ from core.model_runtime.model_providers.google.llm.llm import GoogleLargeLanguag
 
 from tests.integration_tests.model_runtime.__mock.google import setup_google_mock
 
+=======
+from core.model_runtime.entities.llm_entities import LLMResult, LLMResultChunk, LLMResultChunkDelta
+from core.model_runtime.entities.message_entities import (AssistantPromptMessage, ImagePromptMessageContent,
+                                                          SystemPromptMessage, TextPromptMessageContent,
+                                                          UserPromptMessage)
+from core.model_runtime.errors.validate import CredentialsValidateFailedError
+from core.model_runtime.model_providers.google.llm.llm import GoogleLargeLanguageModel
+from tests.integration_tests.model_runtime.__mock.google import setup_google_mock
+
+
+>>>>>>> main
 @pytest.mark.parametrize('setup_google_mock', [['none']], indirect=True)
 def test_validate_credentials(setup_google_mock):
     model = GoogleLargeLanguageModel()

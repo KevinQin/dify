@@ -13,7 +13,12 @@ import {
 } from './declarations'
 import {
   useDefaultModel,
+<<<<<<< HEAD
   useUpdateModelProvidersAndModelList,
+=======
+  useUpdateModelList,
+  useUpdateModelProviders,
+>>>>>>> main
 } from './hooks'
 import { AlertTriangle } from '@/app/components/base/icons/src/vender/solid/alertsAndFeedback'
 import { useProviderContext } from '@/context/provider-context'
@@ -23,7 +28,12 @@ import { useEventEmitterContextContext } from '@/context/event-emitter'
 const ModelProviderPage = () => {
   const { t } = useTranslation()
   const { eventEmitter } = useEventEmitterContextContext()
+<<<<<<< HEAD
   const updateModelProvidersAndModelList = useUpdateModelProvidersAndModelList()
+=======
+  const updateModelProviders = useUpdateModelProviders()
+  const updateModelList = useUpdateModelList()
+>>>>>>> main
   const { data: textGenerationDefaultModel } = useDefaultModel(1)
   const { data: embeddingsDefaultModel } = useDefaultModel(2)
   const { data: rerankDefaultModel } = useDefaultModel(3)
@@ -57,13 +67,29 @@ const ModelProviderPage = () => {
         currentCustomConfigrationModelFixedFields: customConfigrationModelFixedFields,
       },
       onSaveCallback: () => {
+<<<<<<< HEAD
         updateModelProvidersAndModelList()
+=======
+        updateModelProviders()
+
+        if (configurateMethod === ConfigurateMethodEnum.predefinedModel) {
+          provider.supported_model_types.forEach((type) => {
+            updateModelList(type)
+          })
+        }
+>>>>>>> main
 
         if (configurateMethod === ConfigurateMethodEnum.customizableModel && provider.custom_configuration.status === CustomConfigurationStatusEnum.active) {
           eventEmitter?.emit({
             type: UPDATE_MODEL_PROVIDER_CUSTOM_MODEL_LIST,
             payload: provider.provider,
           } as any)
+<<<<<<< HEAD
+=======
+
+          if (customConfigrationModelFixedFields?.__model_type)
+            updateModelList(customConfigrationModelFixedFields?.__model_type)
+>>>>>>> main
         }
       },
     })

@@ -2,8 +2,13 @@ import logging
 import os
 
 from core.model_runtime.entities.model_entities import ModelType
+<<<<<<< HEAD
 from core.model_runtime.entities.provider_entities import SimpleProviderEntity, ProviderConfig, ProviderEntity
 from core.model_runtime.model_providers.model_provider_factory import ModelProviderFactory, ModelProviderExtension
+=======
+from core.model_runtime.entities.provider_entities import ProviderConfig, ProviderEntity, SimpleProviderEntity
+from core.model_runtime.model_providers.model_provider_factory import ModelProviderExtension, ModelProviderFactory
+>>>>>>> main
 
 logger = logging.getLogger(__name__)
 

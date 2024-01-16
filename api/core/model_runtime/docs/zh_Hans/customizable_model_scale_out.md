@@ -260,7 +260,11 @@ provider_credential_schema:
             fetch_from=FetchFrom.CUSTOMIZABLE_MODEL,
             model_type=model_type,
             model_properties={ 
+<<<<<<< HEAD
                 'mode':  ModelType.LLM,
+=======
+                ModelPropertyKey.MODE:  ModelType.LLM,
+>>>>>>> main
             },
             parameter_rules=rules
         )

@@ -1,11 +1,15 @@
 import decimal
+<<<<<<< HEAD
 import json
 import logging
+=======
+>>>>>>> main
 import os
 from abc import ABC, abstractmethod
 from typing import Optional
 
 import yaml
+<<<<<<< HEAD
 from pydantic import ValidationError
 
 from core.model_runtime.entities.defaults import PARAMETER_RULE_TEMPLATE
@@ -13,6 +17,13 @@ from core.model_runtime.entities.model_entities import PriceInfo, AIModelEntity,
     DefaultParameterName, FetchFrom, ModelType
 from core.model_runtime.entities.common_entities import I18nObject
 from core.model_runtime.errors.invoke import InvokeError, InvokeAuthorizationError
+=======
+from core.model_runtime.entities.common_entities import I18nObject
+from core.model_runtime.entities.defaults import PARAMETER_RULE_TEMPLATE
+from core.model_runtime.entities.model_entities import (AIModelEntity, DefaultParameterName, FetchFrom, ModelType,
+                                                        PriceConfig, PriceInfo, PriceType)
+from core.model_runtime.errors.invoke import InvokeAuthorizationError, InvokeError
+>>>>>>> main
 from core.model_runtime.model_providers.__base.tokenizers.gpt2_tokenzier import GPT2Tokenizer
 
 
@@ -55,6 +66,7 @@ class AIModel(ABC):
         :param error: model invoke error
         :return: unified error
         """
+<<<<<<< HEAD
         for invoke_error, model_errors in self._invoke_error_mapping.items():
             if isinstance(error, tuple(model_errors)):
                 if invoke_error == InvokeAuthorizationError:
@@ -63,6 +75,18 @@ class AIModel(ABC):
                 return invoke_error(description=f"{invoke_error.description}: {str(error)}")
 
         return InvokeError(description=f"Error: {str(error)}")
+=======
+        provider_name = self.__class__.__module__.split('.')[-3]
+
+        for invoke_error, model_errors in self._invoke_error_mapping.items():
+            if isinstance(error, tuple(model_errors)):
+                if invoke_error == InvokeAuthorizationError:
+                    return invoke_error(description=f"[{provider_name}] Incorrect model credentials provided, please check and try again. ")
+
+                return invoke_error(description=f"[{provider_name}] {invoke_error.description}, {str(error)}")
+
+        return InvokeError(description=f"[{provider_name}] Error: {str(error)}")
+>>>>>>> main
 
     def get_price(self, model: str, credentials: dict, price_type: PriceType, tokens: int) -> PriceInfo:
         """

@@ -14,6 +14,7 @@ help:
   url:
     en_US: https://dashboard.cohere.com/api-keys
 supported_model_types:
+<<<<<<< HEAD
 - rerank
 configurate_methods:
 - predefined-model
@@ -29,3 +30,20 @@ provider_credential_schema:
       zh_Hans: 请填写 API Key
       en_US: Please fill in API Key
     show_on: []
+=======
+  - rerank
+configurate_methods:
+  - predefined-model
+provider_credential_schema:
+  credential_form_schemas:
+    - variable: api_key
+      label:
+        zh_Hans: API Key
+        en_US: API Key
+      type: secret-input
+      required: true
+      placeholder:
+        zh_Hans: 请填写 API Key
+        en_US: Please fill in API Key
+      show_on: [ ]
+>>>>>>> main

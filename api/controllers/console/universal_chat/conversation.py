@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+<<<<<<< HEAD
 from flask_login import current_user
 from flask_restful import fields, reqparse, marshal_with
 from flask_restful.inputs import int_range
@@ -12,6 +13,20 @@ from libs.helper import TimestampField, uuid_value
 from services.conversation_service import ConversationService
 from services.errors.conversation import LastConversationNotExistsError, ConversationNotExistsError
 from services.web_conversation_service import WebConversationService
+=======
+from controllers.console import api
+from controllers.console.universal_chat.wraps import UniversalChatResource
+from fields.conversation_fields import (conversation_with_model_config_fields,
+                                        conversation_with_model_config_infinite_scroll_pagination_fields)
+from flask_login import current_user
+from flask_restful import fields, marshal_with, reqparse
+from flask_restful.inputs import int_range
+from libs.helper import TimestampField, uuid_value
+from services.conversation_service import ConversationService
+from services.errors.conversation import ConversationNotExistsError, LastConversationNotExistsError
+from services.web_conversation_service import WebConversationService
+from werkzeug.exceptions import NotFound
+>>>>>>> main
 
 
 class UniversalChatConversationListApi(UniversalChatResource):

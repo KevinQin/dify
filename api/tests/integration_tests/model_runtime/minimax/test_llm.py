@@ -1,4 +1,5 @@
 import os
+<<<<<<< HEAD
 import pytest
 
 from typing import Generator
@@ -11,6 +12,19 @@ from core.model_runtime.entities.llm_entities import LLMResult, LLMResultChunkDe
 from core.model_runtime.errors.validate import CredentialsValidateFailedError
 from core.model_runtime.model_providers.minimax.llm.llm import MinimaxLargeLanguageModel
 
+=======
+from time import sleep
+from typing import Generator
+
+import pytest
+from core.model_runtime.entities.llm_entities import LLMResult, LLMResultChunk, LLMResultChunkDelta
+from core.model_runtime.entities.message_entities import AssistantPromptMessage, UserPromptMessage
+from core.model_runtime.entities.model_entities import AIModelEntity
+from core.model_runtime.errors.validate import CredentialsValidateFailedError
+from core.model_runtime.model_providers.minimax.llm.llm import MinimaxLargeLanguageModel
+
+
+>>>>>>> main
 def test_predefined_models():
     model = MinimaxLargeLanguageModel()
     model_schemas = model.predefined_models()

@@ -1,12 +1,20 @@
 import os
 
 import pytest
+<<<<<<< HEAD
 
 from core.model_runtime.entities.text_embedding_entities import TextEmbeddingResult
 from core.model_runtime.errors.validate import CredentialsValidateFailedError
 from core.model_runtime.model_providers.xinference.text_embedding.text_embedding import XinferenceTextEmbeddingModel
 
 from tests.integration_tests.model_runtime.__mock.xinference import setup_xinference_mock, MOCK
+=======
+from core.model_runtime.entities.text_embedding_entities import TextEmbeddingResult
+from core.model_runtime.errors.validate import CredentialsValidateFailedError
+from core.model_runtime.model_providers.xinference.text_embedding.text_embedding import XinferenceTextEmbeddingModel
+from tests.integration_tests.model_runtime.__mock.xinference import MOCK, setup_xinference_mock
+
+>>>>>>> main
 
 @pytest.mark.parametrize('setup_xinference_mock', [['none']], indirect=True)
 def test_validate_credentials(setup_xinference_mock):

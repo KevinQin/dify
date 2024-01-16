@@ -1,12 +1,20 @@
 import os
 
 import pytest
+<<<<<<< HEAD
 
 from core.model_runtime.errors.validate import CredentialsValidateFailedError
 from core.model_runtime.model_providers.anthropic.anthropic import AnthropicProvider
 
 from tests.integration_tests.model_runtime.__mock.anthropic import setup_anthropic_mock
 
+=======
+from core.model_runtime.errors.validate import CredentialsValidateFailedError
+from core.model_runtime.model_providers.anthropic.anthropic import AnthropicProvider
+from tests.integration_tests.model_runtime.__mock.anthropic import setup_anthropic_mock
+
+
+>>>>>>> main
 @pytest.mark.parametrize('setup_anthropic_mock', [['none']], indirect=True)
 def test_validate_provider_credentials(setup_anthropic_mock):
     provider = AnthropicProvider()

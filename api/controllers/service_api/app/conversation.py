@@ -1,17 +1,30 @@
 # -*- coding:utf-8 -*-
+<<<<<<< HEAD
 from flask import request
 from flask_restful import fields, marshal_with, reqparse
 from flask_restful.inputs import int_range
 from werkzeug.exceptions import NotFound
 
+=======
+import services
+>>>>>>> main
 from controllers.service_api import api
 from controllers.service_api.app import create_or_update_end_user_for_user_id
 from controllers.service_api.app.error import NotChatAppError
 from controllers.service_api.wraps import AppApiResource
 from fields.conversation_fields import conversation_infinite_scroll_pagination_fields, simple_conversation_fields
+<<<<<<< HEAD
 from libs.helper import TimestampField, uuid_value
 import services
 from services.conversation_service import ConversationService
+=======
+from flask import request
+from flask_restful import fields, marshal_with, reqparse
+from flask_restful.inputs import int_range
+from libs.helper import TimestampField, uuid_value
+from services.conversation_service import ConversationService
+from werkzeug.exceptions import NotFound
+>>>>>>> main
 
 
 class ConversationApi(AppApiResource):

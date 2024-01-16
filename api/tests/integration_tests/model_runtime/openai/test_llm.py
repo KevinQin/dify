@@ -2,6 +2,7 @@ import os
 from typing import Generator
 
 import pytest
+<<<<<<< HEAD
 
 from core.model_runtime.entities.message_entities import AssistantPromptMessage, TextPromptMessageContent, UserPromptMessage, \
     SystemPromptMessage, ImagePromptMessageContent, PromptMessageTool
@@ -10,11 +11,24 @@ from core.model_runtime.model_providers.__base.large_language_model import Large
 from core.model_runtime.entities.llm_entities import LLMResult, LLMResultChunkDelta, \
     LLMResultChunk
 from core.model_runtime.errors.validate import CredentialsValidateFailedError
+=======
+from core.model_runtime.entities.llm_entities import LLMResult, LLMResultChunk, LLMResultChunkDelta
+from core.model_runtime.entities.message_entities import (AssistantPromptMessage, ImagePromptMessageContent,
+                                                          PromptMessageTool, SystemPromptMessage,
+                                                          TextPromptMessageContent, UserPromptMessage)
+from core.model_runtime.entities.model_entities import AIModelEntity, ModelType
+from core.model_runtime.errors.validate import CredentialsValidateFailedError
+from core.model_runtime.model_providers.__base.large_language_model import LargeLanguageModel
+>>>>>>> main
 from core.model_runtime.model_providers.openai.llm.llm import OpenAILargeLanguageModel
 
 """FOR MOCK FIXTURES, DO NOT REMOVE"""
 from tests.integration_tests.model_runtime.__mock.openai import setup_openai_mock
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
 def test_predefined_models():
     model = OpenAILargeLanguageModel()
     model_schemas = model.predefined_models()
@@ -327,10 +341,42 @@ def test_get_num_tokens():
             UserPromptMessage(
                 content='Hello World!'
             )
+<<<<<<< HEAD
         ]
     )
 
     assert num_tokens == 21
+=======
+        ],
+        tools=[
+            PromptMessageTool(
+                name='get_weather',
+                description='Determine weather in my location',
+                parameters={
+                    "type": "object",
+                    "properties": {
+                      "location": {
+                        "type": "string",
+                        "description": "The city and state e.g. San Francisco, CA"
+                      },
+                      "unit": {
+                        "type": "string",
+                        "enum": [
+                          "c",
+                          "f"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "location"
+                    ]
+                }
+            ),
+        ]
+    )
+
+    assert num_tokens == 72
+>>>>>>> main
 
 @pytest.mark.parametrize('setup_openai_mock', [['chat', 'remote']], indirect=True)
 def test_fine_tuned_models(setup_openai_mock):

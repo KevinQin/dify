@@ -2,11 +2,18 @@
 from __future__ import annotations
 
 import logging
+<<<<<<< HEAD
 from typing import Any, Iterable, List, Optional, Tuple, Union, Sequence
 from uuid import uuid4
 
 import numpy as np
 
+=======
+from typing import Any, Iterable, List, Optional, Sequence, Tuple, Union
+from uuid import uuid4
+
+import numpy as np
+>>>>>>> main
 from langchain.docstore.document import Document
 from langchain.embeddings.base import Embeddings
 from langchain.vectorstores.base import VectorStore
@@ -235,6 +242,7 @@ class Milvus(VectorStore):
     def _create_collection(
         self, embeddings: list, metadatas: Optional[list[dict]] = None
     ) -> None:
+<<<<<<< HEAD
         from pymilvus import (
             Collection,
             CollectionSchema,
@@ -242,6 +250,9 @@ class Milvus(VectorStore):
             FieldSchema,
             MilvusException,
         )
+=======
+        from pymilvus import Collection, CollectionSchema, DataType, FieldSchema, MilvusException
+>>>>>>> main
         from pymilvus.orm.types import infer_dtype_bydata
 
         # Determine embedding dim

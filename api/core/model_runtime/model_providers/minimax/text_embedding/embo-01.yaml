@@ -6,4 +6,8 @@ model_properties:
 pricing:
   input: '0.0005'
   unit: '0.001'
+<<<<<<< HEAD
   currency: RMB
+=======
+  currency: RMB
+>>>>>>> main

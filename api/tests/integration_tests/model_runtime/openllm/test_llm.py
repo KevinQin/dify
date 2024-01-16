@@ -1,4 +1,5 @@
 import os
+<<<<<<< HEAD
 import pytest
 
 from typing import Generator
@@ -9,6 +10,17 @@ from core.model_runtime.entities.llm_entities import LLMResult, LLMResultChunkDe
 from core.model_runtime.errors.validate import CredentialsValidateFailedError
 from core.model_runtime.model_providers.openllm.llm.llm import OpenLLMLargeLanguageModel
 
+=======
+from typing import Generator
+
+import pytest
+from core.model_runtime.entities.llm_entities import LLMResult, LLMResultChunk, LLMResultChunkDelta
+from core.model_runtime.entities.message_entities import AssistantPromptMessage, UserPromptMessage
+from core.model_runtime.errors.validate import CredentialsValidateFailedError
+from core.model_runtime.model_providers.openllm.llm.llm import OpenLLMLargeLanguageModel
+
+
+>>>>>>> main
 def test_validate_credentials_for_chat_model():
     model = OpenLLMLargeLanguageModel()
 

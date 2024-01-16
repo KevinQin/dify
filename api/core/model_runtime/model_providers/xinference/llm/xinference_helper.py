@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from requests import get
 from requests.sessions import Session
 from requests.adapters import HTTPAdapter
@@ -6,6 +7,18 @@ from time import time
 from threading import Lock
 from typing import List
 
+=======
+from threading import Lock
+from time import time
+from typing import List
+
+from requests import get
+from requests.adapters import HTTPAdapter
+from requests.exceptions import ConnectionError, MissingSchema, Timeout
+from requests.sessions import Session
+
+
+>>>>>>> main
 class XinferenceModelExtraParameter(object):
     model_format: str
     model_handle_type: str

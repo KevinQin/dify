@@ -2,6 +2,7 @@ import logging
 import os
 import time
 from abc import abstractmethod
+<<<<<<< HEAD
 from typing import Optional, Generator, Union, List
 
 from core.model_runtime.callbacks.base_callback import Callback
@@ -11,6 +12,16 @@ from core.model_runtime.entities.model_entities import ModelPropertyKey, PriceTy
     ModelType
 from core.model_runtime.entities.llm_entities import LLMResult, LLMMode, LLMUsage, \
     LLMResultChunk, LLMResultChunkDelta
+=======
+from typing import Generator, List, Optional, Union
+
+from core.model_runtime.callbacks.base_callback import Callback
+from core.model_runtime.callbacks.logging_callback import LoggingCallback
+from core.model_runtime.entities.llm_entities import LLMMode, LLMResult, LLMResultChunk, LLMResultChunkDelta, LLMUsage
+from core.model_runtime.entities.message_entities import AssistantPromptMessage, PromptMessage, PromptMessageTool
+from core.model_runtime.entities.model_entities import (ModelPropertyKey, ModelType, ParameterRule, ParameterType,
+                                                        PriceType)
+>>>>>>> main
 from core.model_runtime.model_providers.__base.ai_model import AIModel
 
 logger = logging.getLogger(__name__)

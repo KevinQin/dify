@@ -1,12 +1,20 @@
 from typing import Optional
 
+<<<<<<< HEAD
 from openai import OpenAI
 from openai.types import ModerationCreateResponse
 
+=======
+>>>>>>> main
 from core.model_runtime.entities.model_entities import ModelPropertyKey
 from core.model_runtime.errors.validate import CredentialsValidateFailedError
 from core.model_runtime.model_providers.__base.moderation_model import ModerationModel
 from core.model_runtime.model_providers.openai._common import _CommonOpenAI
+<<<<<<< HEAD
+=======
+from openai import OpenAI
+from openai.types import ModerationCreateResponse
+>>>>>>> main
 
 
 class OpenAIModerationModel(_CommonOpenAI, ModerationModel):

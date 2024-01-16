@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 from typing import Dict, Any
 from enum import Enum
+=======
+from enum import Enum
+from typing import Any, Dict
+
+>>>>>>> main
 
 class MinimaxMessage:
     class Role(Enum):

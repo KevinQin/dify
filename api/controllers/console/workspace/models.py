@@ -1,17 +1,28 @@
 import logging
 
+<<<<<<< HEAD
 from flask_login import current_user
 from flask_restful import reqparse, Resource
 from werkzeug.exceptions import Forbidden
 
+=======
+>>>>>>> main
 from controllers.console import api
 from controllers.console.setup import setup_required
 from controllers.console.wraps import account_initialization_required
 from core.model_runtime.entities.model_entities import ModelType
 from core.model_runtime.errors.validate import CredentialsValidateFailedError
 from core.model_runtime.utils.encoders import jsonable_encoder
+<<<<<<< HEAD
 from libs.login import login_required
 from services.model_provider_service import ModelProviderService
+=======
+from flask_login import current_user
+from flask_restful import Resource, reqparse
+from libs.login import login_required
+from services.model_provider_service import ModelProviderService
+from werkzeug.exceptions import Forbidden
+>>>>>>> main
 
 
 class DefaultModelApi(Resource):

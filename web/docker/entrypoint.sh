@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
@@ -20,4 +20,8 @@ fi
 export NEXT_PUBLIC_SENTRY_DSN=${SENTRY_DSN}
 export NEXT_PUBLIC_SITE_ABOUT=${SITE_ABOUT}
 
+<<<<<<< HEAD
 node ./server.js
+=======
+node ./server.js
+>>>>>>> main

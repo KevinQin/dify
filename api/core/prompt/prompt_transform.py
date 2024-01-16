@@ -1,15 +1,16 @@
+import enum
 import json
 import os
 import re
-import enum
 from typing import List, Optional, Tuple, cast
 
-from core.entities.application_entities import ModelConfigEntity, PromptTemplateEntity, \
-    AdvancedCompletionPromptTemplateEntity
+from core.entities.application_entities import (AdvancedCompletionPromptTemplateEntity, ModelConfigEntity,
+                                                PromptTemplateEntity)
 from core.file.file_obj import FileObj
 from core.memory.token_buffer_memory import TokenBufferMemory
-from core.model_runtime.entities.message_entities import PromptMessage, SystemPromptMessage, UserPromptMessage, \
-    TextPromptMessageContent, PromptMessageRole, AssistantPromptMessage
+from core.model_runtime.entities.message_entities import (AssistantPromptMessage, PromptMessage, PromptMessageRole,
+                                                          SystemPromptMessage, TextPromptMessageContent,
+                                                          UserPromptMessage)
 from core.model_runtime.entities.model_entities import ModelPropertyKey
 from core.model_runtime.model_providers.__base.large_language_model import LargeLanguageModel
 from core.prompt.prompt_builder import PromptBuilder
@@ -121,6 +122,10 @@ class PromptTransform:
                     prompt_template_entity=prompt_template_entity,
                     inputs=inputs,
                     query=query,
+<<<<<<< HEAD
+=======
+                    files=files,
+>>>>>>> main
                     context=context,
                     memory=memory,
                     model_config=model_config
@@ -343,7 +348,18 @@ class PromptTransform:
 
             prompt_message = UserPromptMessage(content=prompt_message_contents)
         else:
+<<<<<<< HEAD
             prompt_message = UserPromptMessage(content=prompt)
+=======
+            if files:
+                prompt_message_contents = [TextPromptMessageContent(data=prompt)]
+                for file in files:
+                    prompt_message_contents.append(file.prompt_message_content)
+
+                prompt_message = UserPromptMessage(content=prompt_message_contents)
+            else:
+                prompt_message = UserPromptMessage(content=prompt)
+>>>>>>> main
 
         return [prompt_message]
 
@@ -434,6 +450,10 @@ class PromptTransform:
                                                        prompt_template_entity: PromptTemplateEntity,
                                                        inputs: dict,
                                                        query: str,
+<<<<<<< HEAD
+=======
+                                                       files: List[FileObj],
+>>>>>>> main
                                                        context: Optional[str],
                                                        memory: Optional[TokenBufferMemory],
                                                        model_config: ModelConfigEntity) -> List[PromptMessage]:
@@ -461,7 +481,18 @@ class PromptTransform:
 
         prompt = self._format_prompt(prompt_template, prompt_inputs)
 
+<<<<<<< HEAD
         prompt_messages.append(UserPromptMessage(content=prompt))
+=======
+        if files:
+            prompt_message_contents = [TextPromptMessageContent(data=prompt)]
+            for file in files:
+                prompt_message_contents.append(file.prompt_message_content)
+
+            prompt_messages.append(UserPromptMessage(content=prompt_message_contents))
+        else:
+            prompt_messages.append(UserPromptMessage(content=prompt))
+>>>>>>> main
 
         return prompt_messages
 

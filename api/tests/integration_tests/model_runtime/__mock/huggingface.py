@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from tests.integration_tests.model_runtime.__mock.huggingface_chat import MockHuggingfaceChatClass
 
 from huggingface_hub import InferenceClient
@@ -7,6 +8,15 @@ from typing import List, Dict, Any
 
 import pytest
 import os
+=======
+import os
+from typing import Any, Dict, List
+
+import pytest
+from _pytest.monkeypatch import MonkeyPatch
+from huggingface_hub import InferenceClient
+from tests.integration_tests.model_runtime.__mock.huggingface_chat import MockHuggingfaceChatClass
+>>>>>>> main
 
 MOCK = os.getenv('MOCK_SWITCH', 'false').lower() == 'true'
 

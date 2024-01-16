@@ -1,6 +1,10 @@
 from typing import Optional
 
+<<<<<<< HEAD
 from core.model_runtime.entities.provider_entities import FormType, CredentialFormSchema
+=======
+from core.model_runtime.entities.provider_entities import CredentialFormSchema, FormType
+>>>>>>> main
 
 
 class CommonValidator:
@@ -46,7 +50,11 @@ class CommonValidator:
         :return: validated credential form schema value
         """
         #  If the variable does not exist in credentials
+<<<<<<< HEAD
         if credential_form_schema.variable not in credentials:
+=======
+        if credential_form_schema.variable not in credentials or not credentials[credential_form_schema.variable]:
+>>>>>>> main
             # If required is True, an exception is thrown
             if credential_form_schema.required:
                 raise ValueError(f'Variable {credential_form_schema.variable} is required')

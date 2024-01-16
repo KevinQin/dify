@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from openai.resources.moderations import Moderations
 from openai.types import ModerationCreateResponse
 from openai.types.moderation import Moderation, Categories, CategoryScores
@@ -8,6 +9,17 @@ from typing import Union, List, Literal, Any
 from core.model_runtime.errors.invoke import InvokeAuthorizationError
 
 import re
+=======
+import re
+from typing import Any, List, Literal, Union
+
+from core.model_runtime.errors.invoke import InvokeAuthorizationError
+from openai._types import NOT_GIVEN, NotGiven
+from openai.resources.moderations import Moderations
+from openai.types import ModerationCreateResponse
+from openai.types.moderation import Categories, CategoryScores, Moderation
+
+>>>>>>> main
 
 class MockModerationClass(object):
     def moderation_create(self: Moderations,*,

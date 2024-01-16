@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import logging
 from decimal import Decimal
 from urllib.parse import urljoin
@@ -18,10 +19,32 @@ from core.model_runtime.entities.model_entities import ModelPropertyKey, ModelTy
     DefaultParameterName, \
     ParameterType, ModelPropertyKey, FetchFrom, AIModelEntity
 from core.model_runtime.entities.llm_entities import LLMMode, LLMResult, LLMResultChunk, LLMResultChunkDelta
+=======
+import json
+import logging
+from decimal import Decimal
+from typing import Generator, List, Optional, Union, cast
+from urllib.parse import urljoin
+
+import requests
+from core.model_runtime.entities.common_entities import I18nObject
+from core.model_runtime.entities.llm_entities import LLMMode, LLMResult, LLMResultChunk, LLMResultChunkDelta
+from core.model_runtime.entities.message_entities import (AssistantPromptMessage, ImagePromptMessageContent,
+                                                          PromptMessage, PromptMessageContent, PromptMessageContentType,
+                                                          PromptMessageFunction, PromptMessageTool, SystemPromptMessage,
+                                                          ToolPromptMessage, UserPromptMessage)
+from core.model_runtime.entities.model_entities import (AIModelEntity, DefaultParameterName, FetchFrom,
+                                                        ModelPropertyKey, ModelType, ParameterRule, ParameterType,
+                                                        PriceConfig)
+>>>>>>> main
 from core.model_runtime.errors.invoke import InvokeError
 from core.model_runtime.errors.validate import CredentialsValidateFailedError
 from core.model_runtime.model_providers.__base.large_language_model import LargeLanguageModel
 from core.model_runtime.model_providers.openai_api_compatible._common import _CommonOAI_API_Compat
+<<<<<<< HEAD
+=======
+from core.model_runtime.utils import helper
+>>>>>>> main
 
 logger = logging.getLogger(__name__)
 
@@ -168,7 +191,12 @@ class OAIAPICompatLargeLanguageModel(_CommonOAI_API_Compat, LargeLanguageModel):
                     type=ParameterType.FLOAT,
                     default=float(credentials.get('temperature', 0.7)),
                     min=0,
+<<<<<<< HEAD
                     max=2
+=======
+                    max=2,
+                    precision=2
+>>>>>>> main
                 ),
                 ParameterRule(
                     name=DefaultParameterName.TOP_P.value,
@@ -176,7 +204,12 @@ class OAIAPICompatLargeLanguageModel(_CommonOAI_API_Compat, LargeLanguageModel):
                     type=ParameterType.FLOAT,
                     default=float(credentials.get('top_p', 1)),
                     min=0,
+<<<<<<< HEAD
                     max=1
+=======
+                    max=1,
+                    precision=2
+>>>>>>> main
                 ),
                 ParameterRule(
                     name="top_k",
@@ -246,7 +279,12 @@ class OAIAPICompatLargeLanguageModel(_CommonOAI_API_Compat, LargeLanguageModel):
         :return: full response or stream response chunk generator result
         """
         headers = {
+<<<<<<< HEAD
             'Content-Type': 'application/json'
+=======
+            'Content-Type': 'application/json',
+            'Accept-Charset': 'utf-8',
+>>>>>>> main
         }
 
         api_key = credentials.get('api_key')
@@ -298,6 +336,12 @@ class OAIAPICompatLargeLanguageModel(_CommonOAI_API_Compat, LargeLanguageModel):
             stream=stream
         )
 
+<<<<<<< HEAD
+=======
+        if response.encoding is None or response.encoding == 'ISO-8859-1':
+            response.encoding = 'utf-8'
+
+>>>>>>> main
         if response.status_code != 200:
             raise InvokeError(f"API request failed with status code {response.status_code}: {response.text}")
 
@@ -354,6 +398,10 @@ class OAIAPICompatLargeLanguageModel(_CommonOAI_API_Compat, LargeLanguageModel):
                         message=AssistantPromptMessage(content=""),
                         finish_reason="Non-JSON encountered."
                     )
+<<<<<<< HEAD
+=======
+                    break
+>>>>>>> main
 
                 if not chunk_json or len(chunk_json['choices']) == 0:
                     continue

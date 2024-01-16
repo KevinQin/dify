@@ -1,12 +1,20 @@
 import os
 
 import pytest
+<<<<<<< HEAD
 
 from core.model_runtime.errors.validate import CredentialsValidateFailedError
 from core.model_runtime.model_providers.google.google import GoogleProvider
 
 from tests.integration_tests.model_runtime.__mock.google import setup_google_mock
 
+=======
+from core.model_runtime.errors.validate import CredentialsValidateFailedError
+from core.model_runtime.model_providers.google.google import GoogleProvider
+from tests.integration_tests.model_runtime.__mock.google import setup_google_mock
+
+
+>>>>>>> main
 @pytest.mark.parametrize('setup_google_mock', [['none']], indirect=True)
 def test_validate_provider_credentials(setup_google_mock):
     provider = GoogleProvider()

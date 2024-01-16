@@ -13,6 +13,7 @@ help:
   url:
     en_US: https://api.minimax.chat/user-center/basic-information/interface-key
 supported_model_types:
+<<<<<<< HEAD
 - llm
 - text-embedding
 configurate_methods:
@@ -35,3 +36,27 @@ provider_credential_schema:
     placeholder:
       zh_Hans: 在此输入您的 Group ID
       en_US: Enter your group ID
+=======
+  - llm
+  - text-embedding
+configurate_methods:
+  - predefined-model
+provider_credential_schema:
+  credential_form_schemas:
+    - variable: minimax_api_key
+      label:
+        en_US: API Key
+      type: secret-input
+      required: true
+      placeholder:
+        zh_Hans: 在此输入您的 API Key
+        en_US: Enter your API Key
+    - variable: minimax_group_id
+      label:
+        en_US: Group ID
+      type: text-input
+      required: true
+      placeholder:
+        zh_Hans: 在此输入您的 Group ID
+        en_US: Enter your group ID
+>>>>>>> main

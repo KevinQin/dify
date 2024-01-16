@@ -6,7 +6,10 @@ from typing import Any, Callable, Dict, Iterable, List, Optional, Tuple, Type
 from uuid import uuid4
 
 import numpy as np
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 from langchain.docstore.document import Document
 from langchain.embeddings.base import Embeddings
 from langchain.utils import get_from_dict_or_env

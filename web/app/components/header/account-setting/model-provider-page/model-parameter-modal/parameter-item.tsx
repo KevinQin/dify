@@ -12,6 +12,10 @@ import { SimpleSelect } from '@/app/components/base/select'
 import TagInput from '@/app/components/base/tag-input'
 
 export type ParameterValue = number | string | string[] | boolean | undefined
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
 type ParameterItemProps = {
   parameterRule: ModelParameterRule
   value?: ParameterValue
@@ -28,11 +32,15 @@ const ParameterItem: FC<ParameterItemProps> = ({
 }) => {
   const language = useLanguage()
   const [localValue, setLocalValue] = useState(value)
+<<<<<<< HEAD
   const mergedValue = isNullOrUndefined(value) ? localValue : value
+=======
+>>>>>>> main
 
   const getDefaultValue = () => {
     let defaultValue: ParameterValue
 
+<<<<<<< HEAD
     if (parameterRule.type === 'int' || parameterRule.type === 'float') {
       if (isNullOrUndefined(parameterRule.default)) {
         if (parameterRule.min)
@@ -55,10 +63,20 @@ const ParameterItem: FC<ParameterItemProps> = ({
       defaultValue = !isNullOrUndefined(parameterRule.default) ? parameterRule.default : false
 
     if (parameterRule.type === 'tag')
+=======
+    if (parameterRule.type === 'int' || parameterRule.type === 'float')
+      defaultValue = isNullOrUndefined(parameterRule.default) ? (parameterRule.min || 0) : parameterRule.default
+    else if (parameterRule.type === 'string')
+      defaultValue = parameterRule.options?.length ? (parameterRule.default || '') : (parameterRule.default || '')
+    else if (parameterRule.type === 'boolean')
+      defaultValue = !isNullOrUndefined(parameterRule.default) ? parameterRule.default : false
+    else if (parameterRule.type === 'tag')
+>>>>>>> main
       defaultValue = !isNullOrUndefined(parameterRule.default) ? parameterRule.default : []
 
     return defaultValue
   }
+<<<<<<< HEAD
   const renderValue = isNullOrUndefined(mergedValue) ? getDefaultValue() : mergedValue
 
   const handleChange = (v: ParameterValue) => {
@@ -70,6 +88,16 @@ const ParameterItem: FC<ParameterItemProps> = ({
       else if (!isNullOrUndefined(value))
         onChange(v)
     }
+=======
+
+  const renderValue = value ?? localValue ?? getDefaultValue()
+
+  const handleInputChange = (newValue: ParameterValue) => {
+    setLocalValue(newValue)
+
+    if (onChange && (parameterRule.name === 'stop' || !isNullOrUndefined(value)))
+      onChange(newValue)
+>>>>>>> main
   }
 
   const handleNumberInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -81,6 +109,7 @@ const ParameterItem: FC<ParameterItemProps> = ({
     if (!isNullOrUndefined(parameterRule.min) && num < parameterRule.min!)
       num = parameterRule.min as number
 
+<<<<<<< HEAD
     handleChange(num)
   }
 
@@ -102,24 +131,144 @@ const ParameterItem: FC<ParameterItemProps> = ({
 
   const handleTagChange = (newSequences: string[]) => {
     handleChange(newSequences)
+=======
+    handleInputChange(num)
+  }
+
+  const handleSlideChange = (num: number) => {
+    handleInputChange(num)
+  }
+
+  const handleRadioChange = (v: number) => {
+    handleInputChange(v === 1)
+  }
+
+  const handleStringInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleInputChange(e.target.value)
+  }
+
+  const handleSelect = (option: { value: string | number; name: string }) => {
+    handleInputChange(option.value)
+  }
+
+  const handleTagChange = (newSequences: string[]) => {
+    handleInputChange(newSequences)
+>>>>>>> main
   }
 
   const handleSwitch = (checked: boolean) => {
     if (onSwitch) {
+<<<<<<< HEAD
       let assignValue: ParameterValue = localValue
 
       if (isNullOrUndefined(localValue))
         assignValue = getDefaultValue()
+=======
+      const assignValue: ParameterValue = localValue || getDefaultValue()
+>>>>>>> main
 
       onSwitch(checked, assignValue)
     }
   }
 
+<<<<<<< HEAD
   const numberInputWithSlide = (parameterRule.type === 'int' || parameterRule.type === 'float')
     && !isNullOrUndefined(parameterRule.min)
     && !isNullOrUndefined(parameterRule.max)
   const numberInput = (parameterRule.type === 'int' || parameterRule.type === 'float')
     && (isNullOrUndefined(parameterRule.min) || isNullOrUndefined(parameterRule.max))
+=======
+  const renderInput = () => {
+    const numberInputWithSlide = (parameterRule.type === 'int' || parameterRule.type === 'float')
+    && !isNullOrUndefined(parameterRule.min)
+    && !isNullOrUndefined(parameterRule.max)
+
+    if (parameterRule.type === 'int' || parameterRule.type === 'float') {
+      let step = 100
+      if (parameterRule.max) {
+        if (parameterRule.max < 10)
+          step = 0.1
+        else if (parameterRule.max < 100)
+          step = 1
+        else if (parameterRule.max < 1000)
+          step = 10
+        else if (parameterRule.max < 10000)
+          step = 100
+      }
+
+      return (
+        <>
+          {numberInputWithSlide && <Slider
+            className='w-[120px]'
+            value={renderValue as number}
+            min={parameterRule.min}
+            max={parameterRule.max}
+            step={step}
+            onChange={handleSlideChange}
+          />}
+          <input
+            className='shrink-0 block ml-4 pl-3 w-16 h-8 appearance-none outline-none rounded-lg bg-gray-100 text-[13px] text-gra-900'
+            type='number'
+            max={parameterRule.max}
+            min={parameterRule.min}
+            step={numberInputWithSlide ? step : +`0.${parameterRule.precision || 0}`}
+            value={renderValue as string}
+            onChange={handleNumberInputChange}
+          />
+        </>
+      )
+    }
+
+    if (parameterRule.type === 'boolean') {
+      return (
+        <Radio.Group
+          className='w-[200px] flex items-center'
+          value={renderValue ? 1 : 0}
+          onChange={handleRadioChange}
+        >
+          <Radio value={1} className='!mr-1 w-[94px]'>True</Radio>
+          <Radio value={0} className='w-[94px]'>False</Radio>
+        </Radio.Group>
+      )
+    }
+
+    if (parameterRule.type === 'string' && !parameterRule.options?.length) {
+      return (
+        <input
+          className='flex items-center px-3 w-[200px] h-8 appearance-none outline-none rounded-lg bg-gray-100 text-[13px] text-gra-900'
+          value={renderValue as string}
+          onChange={handleStringInputChange}
+        />
+      )
+    }
+
+    if (parameterRule.type === 'string' && !!parameterRule?.options?.length) {
+      return (
+        <SimpleSelect
+          className='!py-0'
+          wrapperClassName='!w-[200px] !h-8'
+          defaultValue={renderValue as string}
+          onSelect={handleSelect}
+          items={parameterRule.options.map(option => ({ value: option, name: option }))}
+        />
+      )
+    }
+
+    if (parameterRule.type === 'tag') {
+      return (
+        <div className='w-[200px]'>
+          <TagInput
+            items={renderValue as string[]}
+            onChange={handleTagChange}
+            customizedConfirmKey='Tab'
+          />
+        </div>
+      )
+    }
+
+    return null
+  }
+>>>>>>> main
 
   return (
     <div className={`flex items-center justify-between ${className}`}>
@@ -161,6 +310,7 @@ const ParameterItem: FC<ParameterItemProps> = ({
           )
         }
       </div>
+<<<<<<< HEAD
       {
         numberInputWithSlide && (
           <div className='flex items-center'>
@@ -237,6 +387,9 @@ const ParameterItem: FC<ParameterItemProps> = ({
           </div>
         )
       }
+=======
+      {renderInput()}
+>>>>>>> main
     </div>
   )
 }

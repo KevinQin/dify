@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 from core.moderation.base import Moderation, ModerationInputsResult, ModerationOutputsResult, ModerationAction
+=======
+from core.moderation.base import Moderation, ModerationAction, ModerationInputsResult, ModerationOutputsResult
+>>>>>>> main
 
 
 class KeywordsModeration(Moderation):
@@ -30,7 +34,11 @@ class KeywordsModeration(Moderation):
 
             if query:
                 inputs['query__'] = query
+<<<<<<< HEAD
             keywords_list = self.config['keywords'].split('\n')
+=======
+            keywords_list = [keyword for keyword in self.config['keywords'].split('\n') if keyword]
+>>>>>>> main
             flagged = self._is_violated(inputs, keywords_list)
 
         return ModerationInputsResult(flagged=flagged, action=ModerationAction.DIRECT_OUTPUT, preset_response=preset_response)

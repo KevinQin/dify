@@ -1,9 +1,16 @@
 import openai
+<<<<<<< HEAD
 from httpx import Timeout
 
 from core.model_runtime.errors.invoke import InvokeConnectionError, InvokeServerUnavailableError, InvokeRateLimitError, \
     InvokeAuthorizationError, InvokeBadRequestError, InvokeError
 
+=======
+from core.model_runtime.errors.invoke import (InvokeAuthorizationError, InvokeBadRequestError, InvokeConnectionError,
+                                              InvokeError, InvokeRateLimitError, InvokeServerUnavailableError)
+from httpx import Timeout
+
+>>>>>>> main
 
 class _CommonOpenAI:
     def _to_credential_kwargs(self, credentials: dict) -> dict:

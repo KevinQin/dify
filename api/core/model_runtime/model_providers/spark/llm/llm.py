@@ -1,4 +1,5 @@
 import threading
+<<<<<<< HEAD
 from typing import Optional, Generator, Union, List
 
 from core.model_runtime.entities.message_entities import PromptMessage, PromptMessageTool, UserPromptMessage, AssistantPromptMessage, \
@@ -7,6 +8,15 @@ from core.model_runtime.entities.llm_entities import LLMResult, LLMResultChunk, 
     LLMResultChunkDelta
 from core.model_runtime.errors.invoke import InvokeConnectionError, InvokeServerUnavailableError, InvokeRateLimitError, \
     InvokeAuthorizationError, InvokeBadRequestError, InvokeError
+=======
+from typing import Generator, List, Optional, Union
+
+from core.model_runtime.entities.llm_entities import LLMResult, LLMResultChunk, LLMResultChunkDelta
+from core.model_runtime.entities.message_entities import (AssistantPromptMessage, PromptMessage, PromptMessageTool,
+                                                          SystemPromptMessage, UserPromptMessage)
+from core.model_runtime.errors.invoke import (InvokeAuthorizationError, InvokeBadRequestError, InvokeConnectionError,
+                                              InvokeError, InvokeRateLimitError, InvokeServerUnavailableError)
+>>>>>>> main
 from core.model_runtime.errors.validate import CredentialsValidateFailedError
 from core.model_runtime.model_providers.__base.large_language_model import LargeLanguageModel
 

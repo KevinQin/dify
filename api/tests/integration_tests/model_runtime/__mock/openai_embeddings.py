@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from openai.resources.embeddings import Embeddings
 from openai._types import NotGiven, NOT_GIVEN
 from openai.types.create_embedding_response import CreateEmbeddingResponse, Usage
@@ -9,6 +10,18 @@ from typing import Union, List, Literal, Any
 from core.model_runtime.errors.invoke import InvokeAuthorizationError
 
 import re
+=======
+import re
+from typing import Any, List, Literal, Union
+
+from core.model_runtime.errors.invoke import InvokeAuthorizationError
+from openai import OpenAI
+from openai._types import NOT_GIVEN, NotGiven
+from openai.resources.embeddings import Embeddings
+from openai.types.create_embedding_response import CreateEmbeddingResponse, Usage
+from openai.types.embedding import Embedding
+
+>>>>>>> main
 
 class MockEmbeddingsClass(object):
     def create_embeddings(

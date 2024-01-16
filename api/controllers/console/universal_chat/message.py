@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 import logging
 
+<<<<<<< HEAD
 from flask_login import current_user
 from flask_restful import reqparse, fields, marshal_with
 from flask_restful.inputs import int_range
@@ -18,6 +19,24 @@ from libs.helper import uuid_value, TimestampField
 from services.errors.conversation import ConversationNotExistsError
 from services.errors.message import MessageNotExistsError, SuggestedQuestionsAfterAnswerDisabledError
 from services.message_service import MessageService
+=======
+import services
+from controllers.console import api
+from controllers.console.app.error import (CompletionRequestError, ProviderModelCurrentlyNotSupportError,
+                                           ProviderNotInitializeError, ProviderQuotaExceededError)
+from controllers.console.explore.error import AppSuggestedQuestionsAfterAnswerDisabledError
+from controllers.console.universal_chat.wraps import UniversalChatResource
+from core.errors.error import ModelCurrentlyNotSupportError, ProviderTokenNotInitError, QuotaExceededError
+from core.model_runtime.errors.invoke import InvokeError
+from flask_login import current_user
+from flask_restful import fields, marshal_with, reqparse
+from flask_restful.inputs import int_range
+from libs.helper import TimestampField, uuid_value
+from services.errors.conversation import ConversationNotExistsError
+from services.errors.message import MessageNotExistsError, SuggestedQuestionsAfterAnswerDisabledError
+from services.message_service import MessageService
+from werkzeug.exceptions import InternalServerError, NotFound
+>>>>>>> main
 
 
 class UniversalChatMessageListApi(UniversalChatResource):
